@@ -1,0 +1,65 @@
+{
+  "name": "ts-custom-error",
+  "version": "0.0.1",
+  "description": "Extend native Error to create custom errors",
+  "repository": "github:adriengibrat/ts-custom-error",
+  "bugs": "https://github.com/adriengibrat/ts-custom-error/issues",
+  "keywords": [
+    "custom Error",
+    "extend",
+    "native Error"
+  ],
+  "author": "Adrien Gibrat <adrien.gibrat@gmail.com>",
+  "license": "WTFPL",
+  "main": "dist/custom-error.js",
+  "module": "dist/custom-error.mjs",
+  "browser": "dist/custom-error.umd.js",
+  "types": "dist/index.d.ts",
+  "source": "src/index.ts",
+  "scripts": {
+    "start": "jest --watch --notify",
+    "prebundle": "rm --recursive --force dist",
+    "bundle": "microbundle --compress false",
+    "test": "jest --notify",
+    "coverage": "jest --coverage",
+    "pretty": "prettier --use-tabs --no-semi --single-quote --trailing-comma all --write src/* src/*/*",
+    "precommit": "lint-staged && npm test",
+    "prepublishOnly": "npm test && npm run bundle"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "npm run pretty",
+      "git add"
+    ]
+  },
+  "jest": {
+    "reporters": [
+      "jest-tap-reporter"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "\\.spec\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "globals": {
+      "ts-jest": {
+        "skipBabel": true
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.0",
+    "husky": "^0.14.3",
+    "jest": "^22.4.2",
+    "jest-tap-reporter": "^1.9.0",
+    "lint-staged": "^7.0.0",
+    "microbundle": "^0.4.4",
+    "prettier": "^1.11.1",
+    "tap-notify": "^1.0.0",
+    "ts-jest": "^22.4.1",
+    "typescript": "^2.7.2"
+  }
+}

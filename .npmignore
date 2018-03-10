@@ -1,0 +1,10 @@
+.rpt2_cache/
+.vscode/
+coverage/
+dist/example/
+dist/utils.d.ts
+dist/custom-error.spec.d.ts
+src/
+node_modules/
+.editorConfig
+tsconfig.json
