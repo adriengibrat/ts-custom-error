@@ -23,7 +23,7 @@
     "test": "jest --notify",
     "coverage": "jest --coverage",
     "pretty": "prettier --use-tabs --no-semi --single-quote --trailing-comma all --write src/* src/*/*",
-    "precommit": "lint-staged && npm test",
+    "precommit": "lint-staged && npm test -- --onlyChanged",
     "prepublishOnly": "npm test && npm run bundle"
   },
   "lint-staged": {
