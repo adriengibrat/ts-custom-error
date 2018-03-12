@@ -1,7 +1,6 @@
 # ts-custom-error
 
-<!-- [![Build Status](https://travis-ci.org/adriengibrat/ts-custom-error.svg)](https://travis-ci.org/adriengibrat/ts-custom-error) -->
-
+[![Build Status](https://travis-ci.org/adriengibrat/ts-custom-error.svg)](https://travis-ci.org/adriengibrat/ts-custom-error)
 [![NPM version](https://badge.fury.io/js/ts-custom-error.svg)](http://badge.fury.io/js/ts-custom-error)
 [![Dependency Status](https://david-dm.org/adriengibrat/ts-custom-error.svg)](https://david-dm.org/adriengibrat/ts-custom-error)
 [![devDependency Status](https://david-dm.org/adriengibrat/ts-custom-error/dev-status.svg)](https://david-dm.org/adriengibrat/ts-custom-error#info=devDependencies)
