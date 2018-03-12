@@ -28,6 +28,14 @@ export function factory<Properties = CustomError>(
 	}
 
 	return Object.defineProperties(CustomError, {
-		prototype: { value: Object.create(parent.prototype) },
+		prototype: {
+			value: Object.create(parent.prototype, {
+				constructor: {
+					value: CustomError,
+					writable: true,
+					configurable: true,
+				},
+			}),
+		},
 	})
 }
