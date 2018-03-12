@@ -6,5 +6,8 @@ dist/utils.d.ts
 dist/custom-error.spec.d.ts
 src/
 node_modules/
-.editorConfig
+.editorconfig
+.npmignore
+.travis.yml
+package-lock.json
 tsconfig.json

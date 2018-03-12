@@ -11,3 +11,11 @@ branches:
 cache:
   directories:
     - node_modules
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./codeclimate-reporter
+  - chmod +x ./codeclimate-reporter
+  - ./codeclimate-reporter before-build
+script:
+  - npm run coverage
+after_script:
+  - ./codeclimate-reporter after-build --exit-code $TRAVIS_TEST_RESULT
