@@ -4,8 +4,8 @@ import { CustomError } from './custom-error'
 test('Instance', () => checkProtoChain(CustomError, Error))
 
 test('Instance pre ES6 environment', () => {
-	const O = <any>Object
-	const E = <any>Error
+	const O = Object as any
+	const E = Error as any
 	const setPrototypeOf = O.setPrototypeOf
 	const captureStackTrace = E.captureStackTrace
 	delete O.setPrototypeOf

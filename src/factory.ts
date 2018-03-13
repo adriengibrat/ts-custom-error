@@ -7,9 +7,9 @@ interface CustomProperties {
 }
 
 interface CustomConstructor<Properties> extends ErrorConstructor {
+	readonly prototype: CustomError
 	new (...args): CustomError & Properties
 	(...args): CustomError & Properties
-	readonly prototype: CustomError
 }
 
 export function factory<Properties = CustomError>(

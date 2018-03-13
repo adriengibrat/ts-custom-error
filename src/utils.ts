@@ -8,10 +8,10 @@
  * Support IE11+, see https://docs.microsoft.com/en-us/scripting/javascript/reference/javascript-version-information
  */
 export function fixProto(target: Error, prototype: {}) {
-	const setPrototypeOf: Function = (<any>Object).setPrototypeOf
+	const setPrototypeOf: Function = (Object as any).setPrototypeOf
 	setPrototypeOf
 		? setPrototypeOf(target, prototype)
-		: ((<any>target).__proto__ = prototype)
+		: ((target as any).__proto__ = prototype)
 }
 
 /**
@@ -21,6 +21,6 @@ export function fixProto(target: Error, prototype: {}) {
  * Support v8 environments
  */
 export function fixStack(target: Error, fn: Function = target.constructor) {
-	const captureStackTrace: Function = (<any>Error).captureStackTrace
+	const captureStackTrace: Function = (Error as any).captureStackTrace
 	captureStackTrace && captureStackTrace(target, fn)
 }

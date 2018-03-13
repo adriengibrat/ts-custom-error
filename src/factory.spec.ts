@@ -1,19 +1,24 @@
 import { checkProtoChain, checkProperties } from './spec.utils'
 import { factory } from './factory'
 
-const TestError = factory(function TestError() {})
+const TestError = factory(function TestError() {
+	/* noop */
+})
 
 test('Factory instance', () => checkProtoChain(TestError, Error))
 
 test('Factory extended', () => {
-	const SubError = factory(function SubError() {}, TestError)
+	const SubError = factory(function SubError() {
+		/* noop */
+	}, TestError)
 	checkProtoChain(SubError, TestError, Error)
 	checkProtoChain(factory(SubError, RangeError), RangeError, Error)
 })
 
 test('Factory extended by class', () => {
-	const TestError = <ErrorConstructor>factory(function MyError() {},
-	RangeError)
+	const TestError = factory(function MyError() {
+		/* noop */
+	}, RangeError) as ErrorConstructor
 	class SubError extends TestError {}
 	checkProtoChain(SubError, TestError, RangeError, Error)
 })
