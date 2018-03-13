@@ -16,19 +16,29 @@
   "browser": "dist/custom-error.umd.js",
   "types": "dist/index.d.ts",
   "source": "src/index.ts",
+  "engines": {
+    "node": ">=6.0.0"
+  },
   "scripts": {
     "start": "jest --watch --notify",
     "prebundle": "rm --recursive --force dist",
     "bundle": "microbundle --compress false",
     "test": "jest --notify",
     "coverage": "jest --coverage",
-    "pretty": "prettier --use-tabs --no-semi --single-quote --trailing-comma all --write src/* src/*/*",
+    "pretty": "prettier --write src/* src/*/*",
     "precommit": "lint-staged && npm test -- --onlyChanged",
     "prepublishOnly": "npm test && npm run bundle"
   },
+  "prettier": {
+    "useTabs": true,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
   "lint-staged": {
     "*.ts": [
-      "npm run pretty",
+      "prettier --write",
+      "tslint",
       "git add"
     ]
   },
@@ -60,6 +70,9 @@
     "prettier": "^1.11.1",
     "tap-notify": "^1.0.0",
     "ts-jest": "^22.4.1",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.7.0",
+    "tslint-config-standard": "^7.0.0",
     "typescript": "^2.7.2"
   }
 }

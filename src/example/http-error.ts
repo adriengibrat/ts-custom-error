@@ -6,10 +6,6 @@ import { CustomError } from '../custom-error'
  * Usage: throw HttpError.fromCode(404)
  */
 export class HttpError extends CustomError {
-	public static fromCode(code: number, message?: string) {
-		return new HttpError(code, message)
-	}
-
 	protected static messages = {
 		400: 'Bad Request',
 		401: 'Unauthorized', // RFC 7235
@@ -52,5 +48,9 @@ export class HttpError extends CustomError {
 		message: string = HttpError.messages[code],
 	) {
 		super(message)
+	}
+
+	public static fromCode(code: number, message?: string) {
+		return new HttpError(code, message)
 	}
 }

@@ -11,3 +11,4 @@ node_modules/
 .travis.yml
 package-lock.json
 tsconfig.json
+tslint.json
