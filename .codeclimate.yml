@@ -2,7 +2,7 @@ plugins:
   nodesecurity:
     enabled: true
   tslint:
-    enabled: true
+    enabled: false
     config: tslint.json
   editorconfig:
     enabled: true
