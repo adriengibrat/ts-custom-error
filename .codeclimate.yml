@@ -1,0 +1,16 @@
+plugins:
+  nodesecurity:
+    enabled: true
+  tslint:
+    enabled: true
+    config: tslint.json
+  editorconfig:
+    enabled: true
+    channel: beta
+  fixme:
+    enabled: true
+    config:
+      strings:
+      - FIXME
+      - BUG
+      - TODO

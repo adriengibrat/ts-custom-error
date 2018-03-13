@@ -6,6 +6,7 @@ dist/utils.d.ts
 dist/custom-error.spec.d.ts
 src/
 node_modules/
+.codeclimate.yml
 .editorconfig
 .npmignore
 .travis.yml
