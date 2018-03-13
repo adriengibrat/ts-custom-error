@@ -11,11 +11,16 @@ branches:
 cache:
   directories:
     - node_modules
-before_script:
+before_install: # https://github.com/greenkeeperio/greenkeeper-lockfile
+  - npm install -g npm
+  - npm install -g greenkeeper-lockfile@1
+before_script: # https://github.com/codeclimate/test-reporter/tree/master/examples
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./codeclimate-reporter
   - chmod +x ./codeclimate-reporter
   - ./codeclimate-reporter before-build
+  - greenkeeper-lockfile-update
 script:
   - npm run coverage
 after_script:
   - ./codeclimate-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - greenkeeper-lockfile-upload
