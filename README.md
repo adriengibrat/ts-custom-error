@@ -4,7 +4,6 @@
 [![NPM version](https://badge.fury.io/js/ts-custom-error.svg)](http://badge.fury.io/js/ts-custom-error)
 [![Dependency Status](https://david-dm.org/adriengibrat/ts-custom-error.svg)](https://david-dm.org/adriengibrat/ts-custom-error)
 [![devDependency Status](https://david-dm.org/adriengibrat/ts-custom-error/dev-status.svg)](https://david-dm.org/adriengibrat/ts-custom-error#info=devDependencies)
-
 [![Greenkeeper](https://badges.greenkeeper.io/adriengibrat/ts-custom-error.svg)](https://greenkeeper.io/)
 [![Maintainability](https://api.codeclimate.com/v1/badges/eb4eb956bc028c49f7aa/maintainability)](https://codeclimate.com/github/adriengibrat/ts-custom-error/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/eb4eb956bc028c49f7aa/test_coverage)](https://codeclimate.com/github/adriengibrat/ts-custom-error/test_coverage)
