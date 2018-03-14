@@ -30,11 +30,14 @@ class HttpError extends CustomError {
 new HttpError(404, 'Not found')
 ```
 
-### Using the factory
-```ts
-import { factory } from 'ts-custom-error'
+More [advanced examples](src/example)
 
-const HttpError = factory(function (code, message= '') {
+### Using a factory
+
+```ts
+import { customErrorFactory } from 'ts-custom-error'
+
+const HttpError = customErrorFactory(function (code, message= '') {
 	this.code = code
 	this.message = message
 })

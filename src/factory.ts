@@ -12,7 +12,7 @@ interface CustomConstructor<Properties> extends ErrorConstructor {
 	(...args): CustomError & Properties
 }
 
-export function factory<Properties = CustomError>(
+export function customErrorFactory<Properties = CustomError>(
 	fn: (...Arguments) => void,
 	parent: ErrorConstructor = Error,
 ): CustomConstructor<Properties> {

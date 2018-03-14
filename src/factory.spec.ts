@@ -1,22 +1,22 @@
 import { checkProtoChain, checkProperties } from './spec.utils'
-import { factory } from './factory'
+import { customErrorFactory } from './factory'
 
-const TestError = factory(function TestError() {
+const TestError = customErrorFactory(function TestError() {
 	/* noop */
 })
 
 test('Factory instance', () => checkProtoChain(TestError, Error))
 
 test('Factory extended', () => {
-	const SubError = factory(function SubError() {
+	const SubError = customErrorFactory(function SubError() {
 		/* noop */
 	}, TestError)
 	checkProtoChain(SubError, TestError, Error)
-	checkProtoChain(factory(SubError, RangeError), RangeError, Error)
+	checkProtoChain(customErrorFactory(SubError, RangeError), RangeError, Error)
 })
 
 test('Factory extended by class', () => {
-	const TestError = factory(function MyError() {
+	const TestError = customErrorFactory(function MyError() {
 		/* noop */
 	}, RangeError) as ErrorConstructor
 	class SubError extends TestError {}
@@ -28,17 +28,17 @@ test('Factory properties', () => {
 		this.code = code
 		this.message = message
 	}
-	checkProperties(factory(TestError), 'foo')
+	checkProperties(customErrorFactory(TestError), 'foo')
 
 	function AnotherError(code = 2, message = 'bar') {
 		this.code = code
 		this.message = message
 	}
-	checkProperties(factory(AnotherError), 'bar')
+	checkProperties(customErrorFactory(AnotherError), 'bar')
 
-	const ArgsError = factory<{ code: number }>(
+	const ArgsError = customErrorFactory<{ code: number }>(
 		AnotherError,
-		factory(TestError),
+		customErrorFactory(TestError),
 	)
 	const argsError = ArgsError(3, 'baz')
 	expect(argsError.message).toBe('baz')
