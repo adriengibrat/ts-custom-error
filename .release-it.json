@@ -1,0 +1,15 @@
+{
+  "buildCommand": "npm run build",
+  "npm": {
+    "publish": true
+  },
+  "prompt": {
+    "src": {
+      "status": true
+    }
+  },
+  "increment": "conventional:angular",
+  "beforeChangelogCommand": "conventional-changelog -p angular -i CHANGELOG.md -s",
+  "changelogCommand": "conventional-changelog -p angular | tail -n +3",
+  "safeBump": false
+}
