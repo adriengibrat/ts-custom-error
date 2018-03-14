@@ -1,18 +1,19 @@
-# ts-custom-error
+# Typescript Custom Error
 
-[![Build Status](https://travis-ci.org/adriengibrat/ts-custom-error.svg)](https://travis-ci.org/adriengibrat/ts-custom-error)
-[![NPM version](https://badge.fury.io/js/ts-custom-error.svg)](http://badge.fury.io/js/ts-custom-error)
-[![Dependency Status](https://david-dm.org/adriengibrat/ts-custom-error.svg)](https://david-dm.org/adriengibrat/ts-custom-error)
-[![devDependency Status](https://david-dm.org/adriengibrat/ts-custom-error/dev-status.svg)](https://david-dm.org/adriengibrat/ts-custom-error#info=devDependencies)
-[![Greenkeeper](https://badges.greenkeeper.io/adriengibrat/ts-custom-error.svg)](https://greenkeeper.io/)
-[![Maintainability](https://api.codeclimate.com/v1/badges/eb4eb956bc028c49f7aa/maintainability)](https://codeclimate.com/github/adriengibrat/ts-custom-error/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/eb4eb956bc028c49f7aa/test_coverage)](https://codeclimate.com/github/adriengibrat/ts-custom-error/test_coverage)
+[![NPM version](https://img.shields.io/npm/v/ts-custom-error.svg?colorB=green)](https://www.npmjs.com/package/ts-custom-error)
+[![WTFPL](https://img.shields.io/npm/l/ts-custom-error.svg?colorB=green)](http://www.wtfpl.net)
+[![Build Status](https://img.shields.io/travis/adriengibrat/ts-custom-error.svg)](https://travis-ci.org/adriengibrat/ts-custom-error)
+[![Code Quality](https://img.shields.io/bithound/code/github/adriengibrat/ts-custom-error.svg)](https://www.bithound.io/github/adriengibrat/ts-custom-error/master)
+[![Maintainability](https://img.shields.io/codeclimate/maintainability/adriengibrat/ts-custom-error.svg)](https://codeclimate.com/github/adriengibrat/ts-custom-error/maintainability)
+[![Test Coverage](https://img.shields.io/codeclimate/c/adriengibrat/ts-custom-error.svg)](https://codeclimate.com/github/adriengibrat/ts-custom-error/test_coverage)
+[![devDependencies](https://img.shields.io/david/dev/adriengibrat/ts-custom-error.svg)](https://www.bithound.io/github/adriengibrat/ts-custom-error/master/dependencies/npm)
 
 ## Extend native Error to create custom errors
 
-CustomError allow to easyly extends native Error in Typescript
+`CustomError` class allow to easyly extends native Error in Typescript
 
 ### Using a class
+
 ```ts
 import { CustomError } from 'ts-custom-error'
 
@@ -43,6 +44,10 @@ new HttpError(404, 'Not found')
 // or
 HttpError(404, 'Not found')
 ```
+
+Factory still allows custom logic inside constructor
+
+They pass the same unit tests, the difference is that constructor can be called as a simple function
 
 ## Similar packages
 - [![custom-error](https://badge.fury.io/js/custom-error.svg)](https://www.npmjs.com/package/custom-error) [custom-error](https://github.com/andrezsanchez/custom-error)
