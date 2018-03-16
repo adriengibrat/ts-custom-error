@@ -1,3 +1,23 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/adriengibrat/ts-custom-error/compare/v1.0.1...v2.0.0) (2018-03-16)
+
+
+### Code Refactoring
+
+* Change factory export name to customErrorFactory ([e8f51a0](https://github.com/adriengibrat/ts-custom-error/commit/e8f51a0))
+
+
+### Features
+
+* Export factory Typescript Interfaces ([d03b476](https://github.com/adriengibrat/ts-custom-error/commit/d03b476))
+
+
+### BREAKING CHANGES
+
+* the factory export name changed from `factory `to more expliit `customErrorFactory`
+
+
+
 <a name="1.0.1"></a>
 ## [1.0.1](https://github.com/adriengibrat/ts-custom-error/compare/v1.0.0...v1.0.1) (2018-03-12)
 
