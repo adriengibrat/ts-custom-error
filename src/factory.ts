@@ -1,22 +1,22 @@
 import { fixStack } from './utils'
 
-interface CustomError extends Error {}
+export interface CustomErrorInterface extends Error {}
 
-interface CustomProperties {
+export interface CustomErrorConstructor<Properties> extends ErrorConstructor {
+	readonly prototype: CustomErrorInterface
+	new (...args): CustomErrorInterface & Properties
+	(...args): CustomErrorInterface & Properties
+}
+
+export interface CustomErrorProperties {
 	[property: string]: any
 }
 
-interface CustomConstructor<Properties> extends ErrorConstructor {
-	readonly prototype: CustomError
-	new (...args): CustomError & Properties
-	(...args): CustomError & Properties
-}
-
-export function customErrorFactory<Properties = CustomError>(
+export function customErrorFactory<Properties = CustomErrorProperties>(
 	fn: (...Arguments) => void,
 	parent: ErrorConstructor = Error,
-): CustomConstructor<Properties> {
-	function CustomError(this: CustomError, ...args: any[]): void {
+): CustomErrorConstructor<Properties> {
+	function CustomError(this: CustomErrorInterface, ...args: any[]): void {
 		// allow simple function call
 		if (!(this instanceof CustomError)) return new CustomError(...args)
 		// apply super
