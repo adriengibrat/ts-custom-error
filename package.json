@@ -1,6 +1,6 @@
 {
   "name": "ts-custom-error",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Extend native Error to create custom errors",
   "repository": "github:adriengibrat/ts-custom-error",
   "bugs": "https://github.com/adriengibrat/ts-custom-error/issues",
@@ -14,6 +14,7 @@
   "main": "dist/custom-error.js",
   "module": "dist/custom-error.mjs",
   "browser": "dist/custom-error.umd.js",
+  "browser:min": "dist/custom-error.umd.min.js",
   "types": "dist/index.d.ts",
   "source": "src/index.ts",
   "engines": {
@@ -23,6 +24,7 @@
     "start": "jest --watch --notify",
     "prebuild": "rm --recursive --force dist",
     "build": "microbundle --compress false",
+    "postbuild": "uglifyjs --compress --mangle --output $npm_package_browser_min -- $npm_package_browser",
     "test": "jest --notify",
     "coverage": "jest --coverage",
     "pretty": "prettier --write src/* src/*/*",
