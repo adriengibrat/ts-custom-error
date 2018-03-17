@@ -7,6 +7,7 @@
 [![Maintainability](https://img.shields.io/codeclimate/maintainability/adriengibrat/ts-custom-error.svg)](https://codeclimate.com/github/adriengibrat/ts-custom-error/maintainability)
 [![Test Coverage](https://img.shields.io/codeclimate/c/adriengibrat/ts-custom-error.svg)](https://codeclimate.com/github/adriengibrat/ts-custom-error/test_coverage)
 [![devDependencies](https://img.shields.io/david/dev/adriengibrat/ts-custom-error.svg)](https://www.bithound.io/github/adriengibrat/ts-custom-error/master/dependencies/npm)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 ## Extend native Error to create custom errors
 

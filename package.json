@@ -27,12 +27,15 @@
     "postbuild": "uglifyjs --compress --mangle --output $npm_package_browser_min -- $npm_package_browser",
     "test": "jest --notify",
     "coverage": "jest --coverage",
+    "cz": "git-cz",
     "precommit": "lint-staged && npm test -- --onlyChanged",
     "release": "release-it"
   },
   "devDependencies": {
     "@types/jest": "^22.2.0",
+    "commitizen": "^2.9.6",
     "conventional-changelog-cli": "^1.3.16",
+    "cz-conventional-changelog": "^2.1.0",
     "husky": "^0.14.3",
     "jest": "^22.4.2",
     "jest-tap-reporter": "^1.9.0",
@@ -46,6 +49,11 @@
     "tslint-config-prettier": "^1.7.0",
     "tslint-config-standard": "^7.0.0",
     "typescript": "^2.7.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "prettier": {
     "useTabs": true,
