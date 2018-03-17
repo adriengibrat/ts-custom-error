@@ -27,11 +27,8 @@
     "postbuild": "uglifyjs --compress --mangle --output $npm_package_browser_min -- $npm_package_browser",
     "test": "jest --notify",
     "coverage": "jest --coverage",
-    "pretty": "prettier --write src/* src/*/*",
     "precommit": "lint-staged && npm test -- --onlyChanged",
-    "prepublishOnly": "npm test && npm run build",
-    "release": "release-it",
-    "changelog": "conventional-changelog"
+    "release": "release-it"
   },
   "devDependencies": {
     "@types/jest": "^22.2.0",
