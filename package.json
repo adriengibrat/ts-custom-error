@@ -27,23 +27,21 @@
     "postbuild": "uglifyjs --compress --mangle --output $npm_package_browser_min -- $npm_package_browser",
     "test": "jest --notify",
     "coverage": "jest --coverage",
-    "cz": "git-cz",
-    "precommit": "lint-staged && npm test -- --onlyChanged",
-    "release": "release-it"
+    "commit": "lint-staged && npm test -- --onlyChanged && git-cz",
+    "deploy": "travis-deploy-once semantic-release"
   },
   "devDependencies": {
     "@types/jest": "^22.2.0",
     "commitizen": "^2.9.6",
-    "conventional-changelog-cli": "^1.3.16",
     "cz-conventional-changelog": "^2.1.0",
-    "husky": "^0.14.3",
     "jest": "^22.4.2",
     "jest-tap-reporter": "^1.9.0",
     "lint-staged": "^7.0.0",
     "microbundle": "^0.4.4",
     "prettier": "^1.11.1",
-    "release-it": "^7.2.1",
+    "semantic-release": "^15.1.3",
     "tap-notify": "^1.0.0",
+    "travis-deploy-once": "^4.4.1",
     "ts-jest": "^22.4.1",
     "tslint": "^5.9.1",
     "tslint-config-prettier": "^1.7.0",
@@ -85,5 +83,19 @@
         "skipBabel": true
       }
     }
+  },
+  "release": {
+    "publish": [
+      "@semantic-release/npm",
+      {
+        "path": "@semantic-release/github",
+        "assets": [
+          {
+            "path": "dist",
+            "label": "Bundled code"
+          }
+        ]
+      }
+    ]
   }
 }

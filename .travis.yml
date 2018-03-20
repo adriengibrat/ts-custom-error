@@ -24,3 +24,11 @@ script:
 after_script:
   - ./codeclimate-reporter after-build --exit-code $TRAVIS_TEST_RESULT
   - greenkeeper-lockfile-upload
+before_deploy:
+  - npm run build
+deploy:
+  provider: script
+  skip_cleanup: true
+  script:
+    - npm run deploy
+
