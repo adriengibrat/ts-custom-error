@@ -27,7 +27,7 @@
     "postbuild": "uglifyjs --compress --mangle --output $npm_package_browser_min -- $npm_package_browser",
     "test": "jest --notify",
     "coverage": "jest --coverage",
-    "commit": "lint-staged && npm test -- --onlyChanged && git-cz",
+    "commit": "lint-staged && git-cz",
     "deploy": "travis-deploy-once semantic-release"
   },
   "devDependencies": {
