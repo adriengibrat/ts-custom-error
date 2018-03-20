@@ -13,9 +13,9 @@ cache:
   directories:
     - node_modules
 before_install: # https://github.com/greenkeeperio/greenkeeper-lockfile
-  - npm install -g greenkeeper-lockfile@1
+  - npm install --global greenkeeper-lockfile@1
 before_script: # https://github.com/codeclimate/test-reporter/tree/master/examples
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./codeclimate-reporter
+  - curl --location https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./codeclimate-reporter
   - chmod +x ./codeclimate-reporter
   - ./codeclimate-reporter before-build
   - greenkeeper-lockfile-update
