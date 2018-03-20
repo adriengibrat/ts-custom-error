@@ -53,6 +53,36 @@ Factory still allows custom logic inside constructor
 
 They pass the same unit tests, the difference is that constructor can be called as a simple function
 
+## About
+
+### Automate all the things
+
+This project is a playground for various external services and tools, it use:
+- opinionated code style mostly inspired from [standardjs](https://standardjs.com)
+- automatic code formating with [prettier](https://github.com/prettier/prettier)
+- code quality analysis by [codeclimate](https://codeclimate.com/github/adriengibrat/ts-custom-error) & [bithound](https://www.bithound.io/github/adriengibrat/ts-custom-error)
+- automated continuous integration on [travis](https://travis-ci.org/adriengibrat/ts-custom-error)
+- automated semantic versioning with [changelog](CHANGELOG.md) generation and release depoyment on [npm](https://www.npmjs.com/package/ts-custom-error) and [github](https://github.com/adriengibrat/ts-custom-error/releases) thanks to [semantic-release](https://github.com/semantic-release/semantic-release)
+
+### Usefull development commands
+
+- Watch source changes and run corresponding unit tests
+```
+npm start
+```
+- Run all unit tests
+```
+npm test
+```
+- Get coverage report
+```
+npm run coverage
+```
+- Format staged code and run commitizen (enforce commit message convention)
+```
+npm run commit
+```
+
 ## Similar packages
 - [![custom-error](https://badge.fury.io/js/custom-error.svg)](https://www.npmjs.com/package/custom-error) [custom-error](https://github.com/andrezsanchez/custom-error)
 - [![custom-errors](https://badge.fury.io/js/custom-errors.svg)](https://www.npmjs.com/package/custom-errors) [custom-errors](https://github.com/techjacker/custom-errors)
