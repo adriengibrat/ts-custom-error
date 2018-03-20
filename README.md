@@ -11,7 +11,7 @@
 
 ## Extend native Error to create custom errors
 
-`CustomError` class allow to easyly extends native Error in Typescript
+`ts-custom-error` is a tiny (~500 bytes of minified & gzipped Javascript) package providing a `CustomError` class and/or a `customErrorFactoryfactory` to easyly extends native Error in node and in the browser. It contains Typescript definition files, map files and bundled js files for various environments (transpiled es5 with commonjs, module and umd exports flavor), trying to offer the best development and debug experiences.
 
 ### Using a class
 
