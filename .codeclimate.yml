@@ -2,8 +2,9 @@ plugins:
   nodesecurity:
     enabled: true
   tslint:
-    enabled: false
+    enabled: true
     config: tslint.json
+    channel: beta
   editorconfig:
     enabled: true
     channel: beta
