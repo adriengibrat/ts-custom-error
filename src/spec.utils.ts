@@ -1,7 +1,7 @@
 export const checkProtoChain = (contructor, ...chain) => {
 	const error = new contructor()
 	expect(error).toBeInstanceOf(contructor)
-	chain.forEach(c => expect(error).toBeInstanceOf(c))
+	chain.forEach(type => expect(error).toBeInstanceOf(type))
 }
 
 export const checkProperties = (contructor, message = 'foo') => {
