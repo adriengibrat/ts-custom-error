@@ -22,4 +22,13 @@ test('Extended', () => {
 	checkProtoChain(SubError, CustomError, Error)
 })
 
+test('Extended with constructor', () => {
+	class HttpError extends CustomError {
+		constructor(public code: number, message?: string) {
+			super(message)
+		}
+	}
+	checkProtoChain(HttpError, CustomError, Error)
+})
+
 test('Basic properties', () => checkProperties(CustomError))
