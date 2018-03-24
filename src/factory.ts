@@ -2,19 +2,44 @@ import { fixStack } from './utils'
 
 export interface CustomErrorInterface extends Error {}
 
-export interface CustomErrorConstructor<Properties> extends ErrorConstructor {
-	readonly prototype: CustomErrorInterface
-	new (...args): CustomErrorInterface & Properties
-	(...args): CustomErrorInterface & Properties
-}
-
 export interface CustomErrorProperties {
 	[property: string]: any
 }
 
-export function customErrorFactory<Properties = CustomErrorProperties>(
-	fn: (...Arguments) => void,
-	parent: ErrorConstructor = Error,
+export interface CustomErrorConstructor<
+	Properties extends CustomErrorProperties
+> extends ErrorConstructor {
+	readonly prototype: CustomErrorInterface
+	new (...args: any[]): CustomErrorInterface & Properties
+	(...args: any[]): CustomErrorInterface & Properties
+}
+
+export type GenericErrorConstructor =
+	| ErrorConstructor
+	| EvalErrorConstructor
+	| RangeErrorConstructor
+	| ReferenceErrorConstructor
+	| SyntaxErrorConstructor
+	| TypeErrorConstructor
+	| URIErrorConstructor
+	| CustomErrorConstructor<CustomErrorProperties>
+
+/**
+ * Allows to easily extend native errors to create custom applicative errors.
+ *
+ * example:
+ * ```
+ * const HttpError = customErrorFactory(function (code: number, message= '') {
+ * 	this.code = code
+ * 	this.message = message
+ * })
+ *
+ * new HttpError(404, 'Not found')
+ * ```
+ */
+export function customErrorFactory<Properties>(
+	fn: (this: Properties, ...args: any[]) => void,
+	parent: GenericErrorConstructor = Error,
 ): CustomErrorConstructor<Properties> {
 	function CustomError(this: CustomErrorInterface, ...args: any[]): void {
 		// allow simple function call

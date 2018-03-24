@@ -2,14 +2,14 @@ import { checkProtoChain, checkProperties } from './spec.utils'
 import { customErrorFactory } from './factory'
 
 const TestError = customErrorFactory(function TestError() {
-	/* noop */
+	/**/
 })
 
 test('Factory instance', () => checkProtoChain(TestError, Error))
 
 test('Factory extended', () => {
 	const SubError = customErrorFactory(function SubError() {
-		/* noop */
+		/**/
 	}, TestError)
 	checkProtoChain(SubError, TestError, Error)
 	checkProtoChain(customErrorFactory(SubError, RangeError), RangeError, Error)
@@ -24,19 +24,21 @@ test('Factory extended by class', () => {
 })
 
 test('Factory properties', () => {
-	function TestError(code = 1, message = 'foo') {
+	type Props = { code: number; message: string }
+
+	function TestError(this: Props, code = 1, message = 'foo') {
 		this.code = code
 		this.message = message
 	}
-	checkProperties(customErrorFactory(TestError), 'foo')
+	checkProperties(customErrorFactory<Props>(TestError), 'foo')
 
-	function AnotherError(code = 2, message = 'bar') {
+	function AnotherError(this: Props, code = 2, message = 'bar') {
 		this.code = code
 		this.message = message
 	}
-	checkProperties(customErrorFactory(AnotherError), 'bar')
+	checkProperties(customErrorFactory<Props>(AnotherError), 'bar')
 
-	const ArgsError = customErrorFactory<{ code: number }>(
+	const ArgsError = customErrorFactory<Props>(
 		AnotherError,
 		customErrorFactory(TestError),
 	)
