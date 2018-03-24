@@ -11,9 +11,25 @@
 
 ## Extend native Error to create custom errors
 
-`ts-custom-error` is a tiny (~500 bytes of minified & gzipped Javascript) package providing a `CustomError` class and/or a `customErrorFactoryfactory` to easyly extends native Error in node and in the browser. It contains Typescript definition files, map files and bundled js files for various environments (transpiled es5 with commonjs, module and umd exports flavor), trying to offer the best development and debug experiences.
+`ts-custom-error` is a tiny (~500 bytes of minified & gzipped Javascript) package providing a `CustomError` class and a `customErrorFactory` function to easyly extends native Error in node and evergreen browsers.
 
-### Using a class
+It's written in Typescript and try to offer the best development and debug experiences: bundled in Javascript with Typescript definition files, map files and bundled js files for various environments: transpiled to es5 with commonjs, module and umd exports, the umd bundle is also available minified for easy import in browsers.
+
+## Why
+
+Because [extending native Error in node and in browsers is tricky](https://stackoverflow.com/questions/1382107/whats-a-good-way-to-extend-error-in-javascript)
+```js
+class MyError extends Error {
+	constructor(m) {
+		super(m)
+	}
+}
+```
+ [doesn't work as expected in ES6](https://stackoverflow.com/questions/31089801/extending-error-in-javascript-with-es6-syntax-babel) and [is broken in Typescript](https://github.com/Microsoft/TypeScript-wiki/blob/master/Breaking-Changes.md#extending-built-ins-like-error-array-and-map-may-no-longer-work).
+
+### Use `CustomError` class
+
+Simply extends and call `super` in you custom constructor.
 
 ```ts
 import { CustomError } from 'ts-custom-error'
@@ -28,32 +44,92 @@ class HttpError extends CustomError {
 }
 
 ...
+
 new HttpError(404, 'Not found')
 ```
+You may want more advanced contructor logic and cutom methods, see [examples](https://github.com/adriengibrat/ts-custom-error/tree/master/src/example)
 
-More [advanced examples](https://github.com/adriengibrat/ts-custom-error/tree/master/src/example)
+### Use `customErrorFactory` factory
 
-### Using a factory
+*Custom error contructor returned by the factory pass the same unit tests.*
+
+Factory still allows custom logic inside constructor:
 
 ```ts
 import { customErrorFactory } from 'ts-custom-error'
 
-const HttpError = customErrorFactory(function (code, message= '') {
+const HttpError = customErrorFactory(function (code: number, message= '') {
 	this.code = code
 	this.message = message
 })
 
 ...
+
 new HttpError(404, 'Not found')
-// or
-HttpError(404, 'Not found')
 ```
 
-Factory still allows custom logic inside constructor
+Custom Error from `customErrorFactory` can:
+- Be called as a simple function
+```ts
+HttpError(404, 'Not found')
+```
+- Extend any native Error, using the second optional argument
+```ts
+import { customErrorFactory } from 'ts-custom-error'
 
-They pass the same unit tests, the difference is that constructor can be called as a simple function
+const ValidationError = customErrorFactory(function (message= 'Invalid parameter') {
+	this.message = message
+}, TypeError)
+```
 
-## About
+### Known limitations
+
+- Error name is always `Error` (or the name of the underlying native Error when using `customErrorFactory`). You may fix this behaviour if it's an issue with some legacy code:
+
+```ts
+import { CustomError } from 'ts-custom-error'
+
+class MyError extends CustomError {
+	constructor() {
+		super()
+		// Optional - CustomError does not try to set `name`,
+		// because minification can mangle the name and
+		// using errors name instead of `instanceof` is a bad idea.
+		// But you may want to do it explicitly anyway:
+		this.name = 'MyError'
+	}
+}
+```
+
+```ts
+import { customErrorFactory } from 'ts-custom-error'
+
+const MyError = customErrorFactory(function () {
+	this.name = 'MyError'
+})
+```
+
+### Usefull development commands
+
+- Watch source changes and run corresponding unit tests
+```
+npm start
+```
+
+- Run all unit tests
+```
+npm test
+```
+
+- Get coverage report
+```
+npm run coverage
+```
+
+- Format staged code and run commitizen (enforce commit message convention)
+```
+npm run commit
+```
 
 ### Automate all the things
 
@@ -64,33 +140,14 @@ This project is a playground for various external services and tools, it use:
 - automated continuous integration on [travis](https://travis-ci.org/adriengibrat/ts-custom-error)
 - automated semantic versioning with [changelog](CHANGELOG.md) generation and release depoyment on [npm](https://www.npmjs.com/package/ts-custom-error) and [github](https://github.com/adriengibrat/ts-custom-error/releases) thanks to [semantic-release](https://github.com/semantic-release/semantic-release)
 
-### Usefull development commands
-
-- Watch source changes and run corresponding unit tests
-```
-npm start
-```
-- Run all unit tests
-```
-npm test
-```
-- Get coverage report
-```
-npm run coverage
-```
-- Format staged code and run commitizen (enforce commit message convention)
-```
-npm run commit
-```
-
 ## Similar packages
-- [![custom-error](https://badge.fury.io/js/custom-error.svg)](https://www.npmjs.com/package/custom-error) [custom-error](https://github.com/andrezsanchez/custom-error)
-- [![custom-errors](https://badge.fury.io/js/custom-errors.svg)](https://www.npmjs.com/package/custom-errors) [custom-errors](https://github.com/techjacker/custom-errors)
-- [![custom-error-generator](https://badge.fury.io/js/custom-error-generator.svg)](https://www.npmjs.com/package/custom-error-generator) [custom-error-generator](https://github.com/jproulx/node-custom-error)
-- [![custom-error-instance](https://badge.fury.io/js/custom-error-instance.svg)](https://www.npmjs.com/package/custom-error-instance) [custom-error-instance](https://github.com/Gi60s/custom-error-instance)
-- [![node-custom-errors](https://badge.fury.io/js/node-custom-errors.svg)](https://www.npmjs.com/package/node-custom-errors) [node-custom-errors](https://github.com/axyjs/node-custom-errors)
-- [![extendable-error](https://badge.fury.io/js/extendable-error.svg)](https://www.npmjs.com/package/extendable-error) [extendable-error](https://github.com/vilic/extendable-error)
-- [![extendable-error-class](https://badge.fury.io/js/extendable-error-class.svg)](https://www.npmjs.com/package/extendable-error-class) [extendable-error-class](https://github.com/brillout/extendable-error-class)
-- [![extend-error](https://badge.fury.io/js/extend-error.svg)](https://www.npmjs.com/package/extend-error) [extend-error](https://github.com/jayyvis/extend-error) not maintained, somewhat limited to custom code error property, attach method to global Error object
-- [![error-extend](https://badge.fury.io/js/eerror-extend.svg)](https://www.npmjs.com/package/error-extend) [error-extend](https://github.com/tilap/error-extend) not maintained, limited to custom code error property
 
+- [![custom-error](https://badge.fury.io/js/custom-error.svg)](https://www.npmjs.com/package/custom-error) [custom-error](https://github.com/andrezsanchez/custom-error) provides a factory with custom name and parent error
+- [![custom-errors](https://badge.fury.io/js/custom-errors.svg)](https://www.npmjs.com/package/custom-errors) [custom-errors](https://github.com/techjacker/custom-errors) provides a class and a factory with custom name and message, easy integration with with [express](https://github.com/expressjs/express) and (log)[https://github.com/visionmedia/log.js]
+- [![custom-error-generator](https://badge.fury.io/js/custom-error-generator.svg)](https://www.npmjs.com/package/custom-error-generator) [custom-error-generator](https://github.com/jproulx/node-custom-error) provides a factory with custom name, default properties and a constructor (node only)
+- [![custom-error-instance](https://badge.fury.io/js/custom-error-instance.svg)](https://www.npmjs.com/package/custom-error-instance) [custom-error-instance](https://github.com/Gi60s/custom-error-instance) provides a factory with custom name, properties and construction logic (! browser compatibility: redefine constructor name)
+- [![node-custom-errors](https://badge.fury.io/js/node-custom-errors.svg)](https://www.npmjs.com/package/node-custom-errors) [node-custom-errors](https://github.com/axyjs/node-custom-errors) provides factories to create abstract or concrete error with default message, an optional constructor function allow more custom properties/methods (node/chrome only, because no feature detection)
+- [![extendable-error](https://badge.fury.io/js/extendable-error.svg)](https://www.npmjs.com/package/extendable-error) [extendable-error](https://github.com/vilic/extendable-error) provides a class with clean stacktrace even in non v8 environments
+- [![extendable-error-class](https://badge.fury.io/js/extendable-error-class.svg)](https://www.npmjs.com/package/extendable-error-class) [extendable-error-class](https://github.com/brillout/extendable-error-class) provides simple class
+- [![extend-error](https://badge.fury.io/js/extend-error.svg)](https://www.npmjs.com/package/extend-error) [extend-error](https://github.com/jayyvis/extend-error) provides a factory attached to global Error object, allows custom name, code & message error
+- [![error-extend](https://badge.fury.io/js/eerror-extend.svg)](https://www.npmjs.com/package/error-extend) [error-extend](https://github.com/tilap/error-extend) provides a factory with custom name, default code & message properties, an optional init function allow more custom properties/methods
