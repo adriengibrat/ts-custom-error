@@ -1,7 +1,21 @@
 import { fixProto, fixStack } from './utils'
 
 /**
- * Extendable Error
+ * Allows to easily extend a base class to create custom applicative errors.
+ *
+ * example:
+ * ```
+ * class HttpError extends CustomError {
+ * 	public constructor(
+ * 		public code: number,
+ * 		message?: string,
+ * 	) {
+ * 		super(message)
+ * 	}
+ * }
+ *
+ * new HttpError(404, 'Not found')
+ * ```
  */
 export class CustomError extends Error {
 	constructor(message?: string) {
