@@ -1,6 +1,6 @@
 {
   "name": "ts-custom-error",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Extend native Error to create custom errors",
   "repository": "github:adriengibrat/ts-custom-error",
   "bugs": "https://github.com/adriengibrat/ts-custom-error/issues",
