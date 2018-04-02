@@ -14,6 +14,8 @@ cache:
     - node_modules
 before_install: # https://github.com/greenkeeperio/greenkeeper-lockfile
   - npm install --global greenkeeper-lockfile@1
+install: # Retry install on fail to avoid failing a build on network/disk/external errors
+  - travis_retry npm install
 before_script: # https://github.com/codeclimate/test-reporter/tree/master/examples
   - curl --location https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./codeclimate-reporter
   - chmod +x ./codeclimate-reporter
