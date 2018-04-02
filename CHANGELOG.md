@@ -1,3 +1,13 @@
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/adriengibrat/ts-custom-error/compare/v2.0.0...v2.1.0) (2018-03-24)
+
+
+### Features
+
+* Improve factory typings ([dc1eed6](https://github.com/adriengibrat/ts-custom-error/commit/dc1eed6))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/adriengibrat/ts-custom-error/compare/v1.0.1...v2.0.0) (2018-03-16)
 
