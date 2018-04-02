@@ -4,3 +4,4 @@ dist/{utils,*.spec,spec.*}.d.ts
 src/
 .*
 ts*.json
+*.tgz
