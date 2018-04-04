@@ -29,7 +29,6 @@ after_script:
 before_deploy:
   - npm run build
 deploy:
-  if: fork = false
   provider: script
   skip_cleanup: true
   script:
