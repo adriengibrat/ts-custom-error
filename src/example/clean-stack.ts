@@ -1,10 +1,13 @@
 import { CustomError } from '../custom-error'
 
-const nodeInternal = () =>
+const internals = () =>
 	Object.keys(process.binding('natives')).concat(['bootstrap_node', 'node'])
 
-const filter = (names: string[]) =>
+const filters = (names: string[]) =>
 	names.map(name => new RegExp(`\\(${name}\\.js:\\d+:\\d+\\)$`))
+
+const reducer = patterns => (line: string) =>
+	patterns.some(pattern => pattern.test(line)) ? ([] as string[]) : line
 
 const cleanStack = (
 	stack: string,
@@ -23,18 +26,17 @@ const cleanStack = (
  * console.log(error.cleanStack())
  */
 export class CleanError extends CustomError {
-	public static nodeInternal = (patterns => (line: string) =>
-		patterns.some(pattern => pattern.test(line)) ? ([] as string[]) : line)(
-		filter(nodeInternal()),
-	)
+	private static node = reducer(filters(internals()))
 
 	public constructor(message: string) {
 		super(message)
 	}
 
-	public static from = (message: string) => new CleanError(message)
+	public static from(message: string) {
+		return new CleanError(message)
+	}
 
-	public cleanStack(filter = CleanError.nodeInternal) {
+	public cleanStack(filter = CleanError.node) {
 		return cleanStack(this.stack, filter)
 	}
 }
