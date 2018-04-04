@@ -1,3 +1,11 @@
+<a name="2.2.1"></a>
+## [2.2.1](https://github.com/adriengibrat/ts-custom-error/compare/v2.2.0...v2.2.1) (2018-04-04)
+
+
+### Bug Fixes
+
+* Fix latest travis deploy fail status ([0b18352](https://github.com/adriengibrat/ts-custom-error/commit/0b18352))
+
 <a name="2.2.0"></a>
 # [2.2.0](https://github.com/adriengibrat/ts-custom-error/compare/v2.1.0...v2.2.0) (2018-04-04)
 
