@@ -100,7 +100,7 @@
     "publish": [
       {
         "path": "@semantic-release/npm",
-        "tarballDir": "."
+        "tarballDir": "./"
       },
       {
         "path": "@semantic-release/github",
