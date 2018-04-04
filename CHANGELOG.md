@@ -1,3 +1,11 @@
+<a name="2.2.0"></a>
+# [2.2.0](https://github.com/adriengibrat/ts-custom-error/compare/v2.1.0...v2.2.0) (2018-04-04)
+
+
+### Features
+
+* Add custom error name support ([7791153](https://github.com/adriengibrat/ts-custom-error/commit/7791153))
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/adriengibrat/ts-custom-error/compare/v2.0.0...v2.1.0) (2018-03-24)
 
