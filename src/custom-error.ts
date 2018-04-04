@@ -18,8 +18,13 @@ import { fixProto, fixStack } from './utils'
  * ```
  */
 export class CustomError extends Error {
+	name: string
+
 	constructor(message?: string) {
 		super(message)
+		// set error name as constructor name
+		// see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new.target#new.target_in_constructors
+		this.name = new.target.name
 		// fix the extended error prototype chain
 		// because typescript __extends implementation can't
 		// see https://github.com/Microsoft/TypeScript-wiki/blob/master/Breaking-Changes.md#extending-built-ins-like-error-array-and-map-may-no-longer-work

@@ -12,7 +12,10 @@ test('Instance pre ES6 environment', () => {
 	delete E.captureStackTrace
 
 	checkProtoChain(CustomError, Error)
-
+	checkProperties(new CustomError(), {
+		name: 'CustomError',
+		message: '',
+	})
 	O.setPrototypeOf = setPrototypeOf
 	E.captureStackTrace = captureStackTrace
 })
@@ -20,6 +23,10 @@ test('Instance pre ES6 environment', () => {
 test('Extended', () => {
 	class SubError extends CustomError {}
 	checkProtoChain(SubError, CustomError, Error)
+	checkProperties(new SubError('test message'), {
+		name: 'SubError',
+		message: 'test message',
+	})
 })
 
 test('Extended with constructor', () => {
@@ -29,6 +36,21 @@ test('Extended with constructor', () => {
 		}
 	}
 	checkProtoChain(HttpError, CustomError, Error)
+	checkProperties(new HttpError(404, 'test message'), {
+		name: 'HttpError',
+		code: 404,
+		message: 'test message',
+	})
 })
 
-test('Basic properties', () => checkProperties(CustomError))
+test('Basic properties', () =>
+	checkProperties(new CustomError('my message'), {
+		name: 'CustomError',
+		message: 'my message',
+	}))
+
+test('Without message', () =>
+	checkProperties(new CustomError(), {
+		name: 'CustomError',
+		message: '',
+	}))

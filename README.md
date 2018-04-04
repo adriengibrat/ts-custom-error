@@ -84,7 +84,14 @@ const ValidationError = customErrorFactory(function (message= 'Invalid parameter
 
 ### Known limitations
 
-- Error name is always `Error` (or the name of the underlying native Error when using `customErrorFactory`). You may fix this behaviour if it's an issue with some legacy code:
+#### Minification and transpilation mangle custom Error names.
+Unexpected results are:
+- Minified identifiers in place of custom Error name in Stacktrace
+- Wrong error recognition where using errors name (bad practice) instead of `instanceof`
+
+You may fix this behaviour by:
+- Using [uglifyjs options](https://github.com/mishoo/UglifyJS2/blob/harmony/README.md) `--mangle 'except=["MyError"]'` (need to specify all custom error names) or `--keep_fnames` / `--keep_classnames` (nothing to specify but your bundle size will be larger)
+- Setting explicitly error name:
 
 ```ts
 import { CustomError } from 'ts-custom-error'
@@ -92,10 +99,7 @@ import { CustomError } from 'ts-custom-error'
 class MyError extends CustomError {
 	constructor() {
 		super()
-		// Optional - CustomError does not try to set `name`,
-		// because minification can mangle the name and
-		// using errors name instead of `instanceof` is a bad idea.
-		// But you may want to do it explicitly anyway:
+		// Set name explicitly as minification can mangle class names
 		this.name = 'MyError'
 	}
 }
@@ -104,7 +108,8 @@ class MyError extends CustomError {
 ```ts
 import { customErrorFactory } from 'ts-custom-error'
 
-const MyError = customErrorFactory(function () {
+const MyError = customErrorFactory(function MyError () {
+	// Set name explicitly as minification can remove function expression names
 	this.name = 'MyError'
 })
 ```

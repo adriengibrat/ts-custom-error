@@ -16,7 +16,7 @@ test('Factory extended', () => {
 })
 
 test('Factory extended by class', () => {
-	const TestError = customErrorFactory(function MyError() {
+	const TestError = customErrorFactory(function TestError() {
 		/* noop */
 	}, RangeError) as ErrorConstructor
 	class SubError extends TestError {}
@@ -30,23 +30,69 @@ test('Factory properties', () => {
 		this.code = code
 		this.message = message
 	}
-	checkProperties(customErrorFactory<Props>(TestError), 'foo')
+	checkProperties(customErrorFactory<Props>(TestError)(), {
+		name: 'TestError',
+		code: 1,
+		message: 'foo',
+	})
 
-	function AnotherError(this: Props, code = 2, message = 'bar') {
-		this.code = code
-		this.message = message
-	}
-	checkProperties(customErrorFactory<Props>(AnotherError), 'bar')
-
-	const ArgsError = customErrorFactory<Props>(
-		AnotherError,
-		customErrorFactory(TestError),
+	checkProperties(
+		customErrorFactory<Props>(function(
+			this: Props,
+			code = 2,
+			message = 'bar',
+		) {
+			this.code = code
+			this.message = message
+		})(),
+		{
+			name: 'Error',
+			code: 2,
+			message: 'bar',
+		},
 	)
-	const argsError = ArgsError(3, 'baz')
-	expect(argsError.message).toBe('baz')
-	expect(argsError.code).toBe(3)
+	checkProperties(
+		customErrorFactory<Props>(function(
+			this: Props,
+			code = 2,
+			message = 'bar',
+		) {
+			this.code = code
+			this.message = message
+		},
+		RangeError)(),
+		{
+			name: 'RangeError',
+			code: 2,
+			message: 'bar',
+		},
+	)
+	checkProperties(
+		customErrorFactory<Props>(function(
+			this: Props,
+			code = 2,
+			message = 'bar',
+		) {
+			this.code = code
+			this.message = message
+		},
+		customErrorFactory<Props>(TestError))(),
+		{
+			name: 'CustomError',
+			code: 2,
+			message: 'bar',
+		},
+	)
 
-	const defaultArgsError = ArgsError()
-	expect(defaultArgsError.message).toBe('bar')
-	expect(defaultArgsError.code).toBe(2)
+	const ArgsError = customErrorFactory<Props>(TestError)
+	checkProperties(ArgsError(3, 'baz'), {
+		name: 'TestError',
+		code: 3,
+		message: 'baz',
+	})
+	checkProperties(ArgsError(), {
+		name: 'TestError',
+		code: 1,
+		message: 'foo',
+	})
 })

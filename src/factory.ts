@@ -48,6 +48,8 @@ export function customErrorFactory<Properties>(
 		parent.apply(this, args)
 		// apply custom fn
 		fn.apply(this, args)
+		// set name from custom fn, default to parent Error name
+		this.name = fn.name || parent.name
 		// try to remove contructor from stack trace
 		fixStack(this, CustomError)
 	}
