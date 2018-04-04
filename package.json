@@ -98,13 +98,15 @@
       "@semantic-release/git"
     ],
     "publish": [
-      {
-        "path": "@semantic-release/npm",
-        "tarballDir": "./"
-      },
+      "@semantic-release/npm",
       {
         "path": "@semantic-release/github",
-        "assets": "*.tgz"
+        "assets": [
+          {
+            "path": "dist/custom-error.umd.min.js",
+            "label": "Minified UMD"
+          }
+        ]
       }
     ]
   }
