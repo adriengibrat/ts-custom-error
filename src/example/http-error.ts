@@ -43,14 +43,11 @@ export class HttpError extends CustomError {
 		511: 'Network Authentication Required', // RFC 6585
 	}
 
-	public constructor(
-		public code: number,
-		message: string = HttpError.messages[code],
-	) {
+	public constructor(public code: number, message: string) {
 		super(message)
 	}
 
-	public static fromCode(code: number, message?: string) {
-		return new HttpError(code, message)
+	public static fromCode(code: number) {
+		return new HttpError(code, HttpError.messages[code])
 	}
 }
