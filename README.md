@@ -58,7 +58,7 @@ Factory still allows custom logic inside constructor:
 ```ts
 import { customErrorFactory } from 'ts-custom-error'
 
-const HttpError = customErrorFactory(function (code: number, message= '') {
+const HttpError = customErrorFactory(function HttpError (code: number, message= '') {
 	this.code = code
 	this.message = message
 })
@@ -77,7 +77,7 @@ HttpError(404, 'Not found')
 ```ts
 import { customErrorFactory } from 'ts-custom-error'
 
-const ValidationError = customErrorFactory(function (message= 'Invalid parameter') {
+const ValidationError = customErrorFactory(function ValidationError (message= 'Invalid parameter') {
 	this.message = message
 }, TypeError)
 ```
