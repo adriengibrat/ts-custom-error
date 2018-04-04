@@ -25,7 +25,7 @@
     "prebuild": "rm --recursive --force dist",
     "build": "microbundle --compress false",
     "postbuild": "uglifyjs --compress --mangle --output $npm_package_browser_min -- $npm_package_browser",
-    "test": "jest --notify",
+    "test": "jest",
     "coverage": "jest --coverage",
     "commit": "lint-staged && git-cz",
     "deploy": "travis-deploy-once semantic-release"
