@@ -1,3 +1,4 @@
+version: "2"
 plugins:
   nodesecurity:
     enabled: true
