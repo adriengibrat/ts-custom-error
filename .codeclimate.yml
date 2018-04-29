@@ -7,7 +7,7 @@ plugins:
     config: tslint.json
     channel: beta
   editorconfig:
-    enabled: true
+    enabled: false
     channel: beta
   fixme:
     enabled: true
