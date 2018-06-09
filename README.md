@@ -3,10 +3,9 @@
 [![NPM version](https://img.shields.io/npm/v/ts-custom-error.svg?colorB=green)](https://www.npmjs.com/package/ts-custom-error)
 [![WTFPL](https://img.shields.io/npm/l/ts-custom-error.svg?colorB=green)](http://www.wtfpl.net)
 [![Build Status](https://img.shields.io/travis/adriengibrat/ts-custom-error.svg)](https://travis-ci.org/adriengibrat/ts-custom-error)
-[![Code Quality](https://img.shields.io/bithound/code/github/adriengibrat/ts-custom-error.svg)](https://www.bithound.io/github/adriengibrat/ts-custom-error/master)
 [![Maintainability](https://img.shields.io/codeclimate/maintainability/adriengibrat/ts-custom-error.svg)](https://codeclimate.com/github/adriengibrat/ts-custom-error/maintainability)
 [![Test Coverage](https://img.shields.io/codeclimate/c/adriengibrat/ts-custom-error.svg)](https://codeclimate.com/github/adriengibrat/ts-custom-error/test_coverage)
-[![devDependencies](https://img.shields.io/david/dev/adriengibrat/ts-custom-error.svg)](https://www.bithound.io/github/adriengibrat/ts-custom-error/master/dependencies/npm)
+[![Greenkeeper enabled](https://badges.greenkeeper.io/adriengibrat/ts-custom-error.svg)](https://greenkeeper.io)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 ## Extend native Error to create custom errors
