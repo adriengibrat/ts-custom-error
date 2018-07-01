@@ -44,7 +44,7 @@
     "semantic-release": "^15.1.4",
     "tap-notify": "^1.0.0",
     "travis-deploy-once": "^5.0.0",
-    "ts-jest": "^22.4.1",
+    "ts-jest": "^23.0.0",
     "tslint": "^5.9.1",
     "tslint-config-prettier": "^1.7.0",
     "tslint-config-standard": "^7.0.0",
