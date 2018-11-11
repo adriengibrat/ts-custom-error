@@ -31,24 +31,24 @@
     "deploy": "travis-deploy-once semantic-release"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^3.0.0",
-    "@semantic-release/git": "^6.0.2",
-    "@types/jest": "^23.0.0",
-    "commitizen": "^2.9.6",
+    "@semantic-release/changelog": "^3.0.1",
+    "@semantic-release/git": "^7.0.5",
+    "@types/jest": "^23.0.9",
+    "commitizen": "^3.0.4",
     "cz-conventional-changelog": "^2.1.0",
-    "jest": "^22.4.3",
+    "jest": "^23.6.0",
     "jest-tap-reporter": "^1.9.0",
-    "lint-staged": "^7.0.2",
+    "lint-staged": "^8.0.4",
     "microbundle": "^0.7.0",
-    "prettier": "^1.11.1",
-    "semantic-release": "^15.1.4",
+    "prettier": "^1.15.2",
+    "semantic-release": "^15.10.8",
     "tap-notify": "^1.0.0",
-    "travis-deploy-once": "^5.0.0",
-    "ts-jest": "^23.0.0",
-    "tslint": "^5.9.1",
-    "tslint-config-prettier": "^1.7.0",
-    "tslint-config-standard": "^7.0.0",
-    "typescript": "^2.8.1"
+    "travis-deploy-once": "^5.0.9",
+    "ts-jest": "^23.10.4",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.1.6"
   },
   "config": {
     "commitizen": {
