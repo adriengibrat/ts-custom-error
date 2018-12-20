@@ -72,19 +72,16 @@
     "reporters": [
       "jest-tap-reporter"
     ],
+    "testRegex": "\\.spec\\.ts$",
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
-    "testRegex": "\\.spec\\.ts$",
     "moduleFileExtensions": [
       "ts",
       "js"
     ],
-    "globals": {
-      "ts-jest": {
-        "skipBabel": true
-      }
-    }
+    "preset": "ts-jest",
+    "testMatch": null
   },
   "release": {
     "verifyConditions": [
