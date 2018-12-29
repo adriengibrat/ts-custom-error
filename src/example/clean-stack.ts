@@ -1,7 +1,8 @@
 import { CustomError } from '../custom-error'
 
 const internals = () =>
-	Object.keys(process.binding('natives')).concat(['bootstrap_node', 'node'])
+	// HACK process binding is deprecated see https://github.com/nodejs/node/pull/22004
+	Object.keys((process as any).binding('natives')).concat(['bootstrap_node', 'node'])
 
 const filters = (names: string[]) =>
 	names.map(name => new RegExp(`\\(${name}\\.js:\\d+:\\d+\\)$`))
