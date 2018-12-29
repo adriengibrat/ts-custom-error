@@ -1,9 +1,6 @@
-.rts2_cache_cjs/
-.rts2_cache_es/
-.rts2_cache_umd/
+.rpt2_*
 .vscode/
 coverage/
 dist/
 node_modules/
 npm-debug.log
-*.tgz

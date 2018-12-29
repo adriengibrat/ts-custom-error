@@ -7,7 +7,7 @@
   "keywords": [
     "custom Error",
     "extend",
-    "native Error"
+    "Error"
   ],
   "author": "Adrien Gibrat <adrien.gibrat@gmail.com>",
   "license": "WTFPL",
@@ -15,16 +15,16 @@
   "module": "dist/custom-error.mjs",
   "browser": "dist/custom-error.umd.js",
   "browser:min": "dist/custom-error.umd.min.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/custom-error.d.ts",
   "source": "src/index.ts",
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=8.0.0"
   },
   "scripts": {
     "start": "jest --watch --notify",
     "prebuild": "rm --recursive --force dist",
     "build": "microbundle --compress false",
-    "postbuild": "uglifyjs --compress --mangle --output $npm_package_browser_min -- $npm_package_browser",
+    "postbuild": "uglifyjs --compress --output $npm_package_browser_min -- $npm_package_browser && cat dist/factory.d.ts >> dist/custom-error.d.ts && rm --recursive --force dist/example dist/factory.d.ts dist/utils.d.ts dist/index.d.ts dist/**spec.* && cat dist/custom-error.d.ts > dist/custom-error.umd.d.ts && cat dist/custom-error.d.ts > dist/custom-error.umd.min.d.ts",
     "test": "jest",
     "coverage": "jest --coverage",
     "commit": "lint-staged && git-cz",
@@ -32,23 +32,24 @@
   },
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.1",
-    "@semantic-release/git": "^7.0.5",
-    "@types/jest": "^23.0.9",
-    "commitizen": "^3.0.4",
+    "@semantic-release/git": "^7.0.6",
+    "@types/jest": "^23.3.10",
+    "@types/node": "^10.12.18",
+    "commitizen": "^3.0.5",
     "cz-conventional-changelog": "^2.1.0",
     "jest": "^23.6.0",
     "jest-tap-reporter": "^1.9.0",
-    "lint-staged": "^8.0.4",
-    "microbundle": "^0.9.0",
-    "prettier": "^1.15.2",
-    "semantic-release": "^15.10.8",
+    "lint-staged": "^8.1.0",
+    "microbundle": "^0.6.0",
+    "prettier": "^1.15.3",
+    "semantic-release": "^15.13.1",
     "tap-notify": "^1.0.0",
-    "travis-deploy-once": "^5.0.9",
-    "ts-jest": "^23.10.4",
-    "tslint": "^5.11.0",
-    "tslint-config-prettier": "^1.15.0",
+    "travis-deploy-once": "^5.0.11",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.17.0",
     "tslint-config-standard": "^8.0.1",
-    "typescript": "^3.1.6"
+    "typescript": "^3.2.2"
   },
   "config": {
     "commitizen": {
