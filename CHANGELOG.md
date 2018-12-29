@@ -1,3 +1,10 @@
+## [2.2.2](https://github.com/adriengibrat/ts-custom-error/compare/v2.2.1...v2.2.2) (2018-12-29)
+
+
+### Bug Fixes
+
+* **release:** Fix umd minification issue, add typescript definitions for all bundles formats ([a091837](https://github.com/adriengibrat/ts-custom-error/commit/a091837))
+
 <a name="2.2.1"></a>
 ## [2.2.1](https://github.com/adriengibrat/ts-custom-error/compare/v2.2.0...v2.2.1) (2018-04-04)
 
