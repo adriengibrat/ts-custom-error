@@ -1,11 +1,12 @@
 # Typescript Custom Error
 
 [![NPM version](https://img.shields.io/npm/v/ts-custom-error.svg?colorB=green)](https://www.npmjs.com/package/ts-custom-error)
-[![WTFPL](https://img.shields.io/npm/l/ts-custom-error.svg?colorB=green)](http://www.wtfpl.net)
-[![Build Status](https://img.shields.io/travis/adriengibrat/ts-custom-error.svg)](https://travis-ci.org/adriengibrat/ts-custom-error)
-[![Maintainability](https://img.shields.io/codeclimate/maintainability/adriengibrat/ts-custom-error.svg)](https://codeclimate.com/github/adriengibrat/ts-custom-error/maintainability)
-[![Test Coverage](https://img.shields.io/codeclimate/c/adriengibrat/ts-custom-error.svg)](https://codeclimate.com/github/adriengibrat/ts-custom-error/test_coverage)
-[![Greenkeeper enabled](https://badges.greenkeeper.io/adriengibrat/ts-custom-error.svg)](https://greenkeeper.io)
+[![WTFPL](https://img.shields.io/npm/l/ts-custom-error.svg?colorB=green)](http://www.wtfpl.net) 
+[![Build Status](https://img.shields.io/travis/adriengibrat/ts-custom-error.svg)](https://travis-ci.org/adriengibrat/ts-custom-error) 
+[![BCH compliance](https://bettercodehub.com/edge/badge/adriengibrat/ts-custom-error?branch=master)](https://bettercodehub.com/results/adriengibrat/ts-custom-error) 
+[![Maintainability](https://api.codeclimate.com/v1/badges/eb4eb956bc028c49f7aa/maintainability)](https://codeclimate.com/github/adriengibrat/ts-custom-error/maintainability) 
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage) 
+[![Greenkeeper enabled](https://badges.greenkeeper.io/adriengibrat/ts-custom-error.svg)](https://greenkeeper.io) 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 ## Extend native Error to create custom errors
