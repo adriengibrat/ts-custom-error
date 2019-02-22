@@ -1,9 +1,21 @@
-import { checkProtoChain, checkProperties } from './spec.utils'
-import { customErrorFactory } from './factory'
+import { customErrorFactory, GenericErrorConstructor } from './factory';
+import { checkProperties, checkProtoChain } from './spec.utils';
 
 const TestError = customErrorFactory(function TestError() {
 	/**/
 })
+
+type Props = { code: number; message: string }
+
+const createTestErrorInstance = (parent?: GenericErrorConstructor) =>
+	customErrorFactory<Props>(function(
+		this: Props,
+		code = 2,
+		message = 'bar',
+	) {
+		this.code = code
+		this.message = message
+	}, parent)()
 
 test('Factory instance', () => checkProtoChain(TestError, Error))
 
@@ -24,7 +36,7 @@ test('Factory extended by class', () => {
 })
 
 test('Factory properties', () => {
-	type Props = { code: number; message: string }
+
 
 	function TestError(this: Props, code = 1, message = 'foo') {
 		this.code = code
@@ -37,14 +49,7 @@ test('Factory properties', () => {
 	})
 
 	checkProperties(
-		customErrorFactory<Props>(function(
-			this: Props,
-			code = 2,
-			message = 'bar',
-		) {
-			this.code = code
-			this.message = message
-		})(),
+		createTestErrorInstance(),
 		{
 			name: 'Error',
 			code: 2,
@@ -52,15 +57,7 @@ test('Factory properties', () => {
 		},
 	)
 	checkProperties(
-		customErrorFactory<Props>(function(
-			this: Props,
-			code = 2,
-			message = 'bar',
-		) {
-			this.code = code
-			this.message = message
-		},
-		RangeError)(),
+		createTestErrorInstance(RangeError),
 		{
 			name: 'RangeError',
 			code: 2,
@@ -68,15 +65,7 @@ test('Factory properties', () => {
 		},
 	)
 	checkProperties(
-		customErrorFactory<Props>(function(
-			this: Props,
-			code = 2,
-			message = 'bar',
-		) {
-			this.code = code
-			this.message = message
-		},
-		customErrorFactory<Props>(TestError))(),
+		createTestErrorInstance(customErrorFactory<Props>(TestError)),
 		{
 			name: 'CustomError',
 			code: 2,
