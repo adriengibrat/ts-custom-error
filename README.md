@@ -1,6 +1,7 @@
 # Typescript Custom Error
 
 [![NPM version](https://img.shields.io/npm/v/ts-custom-error.svg?colorB=green)](https://www.npmjs.com/package/ts-custom-error)
+[![Pet project](https://img.shields.io/badge/maintain-pet_project-yellow.svg?logo=github)](#automate-all-the-things)
 [![WTFPL](https://img.shields.io/npm/l/ts-custom-error.svg?colorB=green)](http://www.wtfpl.net) 
 [![Build Status](https://img.shields.io/travis/adriengibrat/ts-custom-error.svg)](https://travis-ci.org/adriengibrat/ts-custom-error) 
 [![BCH compliance](https://bettercodehub.com/edge/badge/adriengibrat/ts-custom-error?branch=master)](https://bettercodehub.com/results/adriengibrat/ts-custom-error) 
@@ -138,7 +139,7 @@ npm run commit
 
 ### Automate all the things
 
-This project is a playground for various external services and tools, it use:
+⚠️ This project is mainly a pet project and its first purpose is to be a playground for various external services and tools:
 - opinionated code style mostly inspired from [standardjs](https://standardjs.com)
 - automatic code formating with [prettier](https://github.com/prettier/prettier)
 - code quality analysis by [codeclimate](https://codeclimate.com/github/adriengibrat/ts-custom-error) & [bithound](https://www.bithound.io/github/adriengibrat/ts-custom-error)
