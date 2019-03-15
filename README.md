@@ -3,11 +3,11 @@
 [![NPM version](https://img.shields.io/npm/v/ts-custom-error.svg?colorB=green)](https://www.npmjs.com/package/ts-custom-error)
 [![Pet project](https://img.shields.io/badge/maintain-pet_project-yellow.svg?logo=github)](#automate-all-the-things)
 [![WTFPL](https://img.shields.io/npm/l/ts-custom-error.svg?colorB=green)](http://www.wtfpl.net) 
-[![Build Status](https://img.shields.io/travis/adriengibrat/ts-custom-error.svg)](https://travis-ci.org/adriengibrat/ts-custom-error) 
-[![BCH compliance](https://bettercodehub.com/edge/badge/adriengibrat/ts-custom-error?branch=master)](https://bettercodehub.com/results/adriengibrat/ts-custom-error) 
-[![Maintainability](https://api.codeclimate.com/v1/badges/eb4eb956bc028c49f7aa/maintainability)](https://codeclimate.com/github/adriengibrat/ts-custom-error/maintainability) 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/eb4eb956bc028c49f7aa/test_coverage)](https://codeclimate.com/github/adriengibrat/ts-custom-error/test_coverage) 
-[![Greenkeeper enabled](https://badges.greenkeeper.io/adriengibrat/ts-custom-error.svg)](https://greenkeeper.io) 
+[![Build Status](https://img.shields.io/travis/adriengibrat/ts-custom-error.svg)](https://travis-ci.org/adriengibrat/ts-custom-error)
+[![BCH compliance](https://bettercodehub.com/edge/badge/adriengibrat/ts-custom-error?branch=master)](https://bettercodehub.com/results/adriengibrat/ts-custom-error)
+[![Maintainability](https://api.codeclimate.com/v1/badges/eb4eb956bc028c49f7aa/maintainability)](https://codeclimate.com/github/adriengibrat/ts-custom-error/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/eb4eb956bc028c49f7aa/test_coverage)](https://codeclimate.com/github/adriengibrat/ts-custom-error/test_coverage)
+[![Greenkeeper enabled](https://badges.greenkeeper.io/adriengibrat/ts-custom-error.svg)](https://greenkeeper.io)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 ## Extend native Error to create custom errors
@@ -52,7 +52,7 @@ You may want more advanced contructor logic and cutom methods, see [examples](ht
 
 ### Use `customErrorFactory` factory
 
-*Custom error contructor returned by the factory pass the same unit tests.*
+*Custom error contructor returned by the factory pass the same unit tests as Class constructor.*
 
 Factory still allows custom logic inside constructor:
 
