@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/adriengibrat/ts-custom-error/compare/v2.2.2...v3.0.0) (2019-03-15)
+
+
+### chore
+
+* **licence:** Change licence to MIT instead of WTFPL ([7ff194c](https://github.com/adriengibrat/ts-custom-error/commit/7ff194c)), closes [#27](https://github.com/adriengibrat/ts-custom-error/issues/27)
+
+
+### BREAKING CHANGES
+
+* **licence:** Change licence to MIT!
+
 ## [2.2.2](https://github.com/adriengibrat/ts-custom-error/compare/v2.2.1...v2.2.2) (2018-12-29)
 
 
