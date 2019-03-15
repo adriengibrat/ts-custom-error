@@ -10,7 +10,7 @@
     "Error"
   ],
   "author": "Adrien Gibrat <adrien.gibrat@gmail.com>",
-  "license": "WTFPL",
+  "license": "MIT",
   "main": "dist/custom-error.js",
   "module": "dist/custom-error.mjs",
   "browser": "dist/custom-error.umd.js",

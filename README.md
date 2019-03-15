@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/ts-custom-error.svg?colorB=green)](https://www.npmjs.com/package/ts-custom-error)
 [![Pet project](https://img.shields.io/badge/maintain-pet_project-yellow.svg?logo=github)](#automate-all-the-things)
-[![WTFPL](https://img.shields.io/npm/l/ts-custom-error.svg?colorB=green)](http://www.wtfpl.net) 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://img.shields.io/travis/adriengibrat/ts-custom-error.svg)](https://travis-ci.org/adriengibrat/ts-custom-error)
 [![BCH compliance](https://bettercodehub.com/edge/badge/adriengibrat/ts-custom-error?branch=master)](https://bettercodehub.com/results/adriengibrat/ts-custom-error)
 [![Maintainability](https://api.codeclimate.com/v1/badges/eb4eb956bc028c49f7aa/maintainability)](https://codeclimate.com/github/adriengibrat/ts-custom-error/maintainability)
@@ -145,6 +145,10 @@ npm run commit
 - code quality analysis by [codeclimate](https://codeclimate.com/github/adriengibrat/ts-custom-error) & [bithound](https://www.bithound.io/github/adriengibrat/ts-custom-error)
 - automated continuous integration on [travis](https://travis-ci.org/adriengibrat/ts-custom-error)
 - automated semantic versioning with [changelog](CHANGELOG.md) generation and release depoyment on [npm](https://www.npmjs.com/package/ts-custom-error) and [github](https://github.com/adriengibrat/ts-custom-error/releases) thanks to [semantic-release](https://github.com/semantic-release/semantic-release)
+
+## Licence
+
+Starting [version 3.0.0](https://github.com/adriengibrat/ts-custom-error/releases/tag/v3.0.0) this project is under [MIT licence](LICENCE), there are no code change between [version 2.2.2](https://github.com/adriengibrat/ts-custom-error/releases/tag/v2.2.2) and [version 3.0.0](https://github.com/adriengibrat/ts-custom-error/releases/tag/v3.0.0) but changing licence was considered as a breaking change. All [versions <= 3.0.0](https://github.com/adriengibrat/ts-custom-error/releases) are under [WTFPL](http://www.wtfpl.net).
 
 ## Similar packages
 
