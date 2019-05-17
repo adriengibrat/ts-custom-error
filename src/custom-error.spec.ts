@@ -54,3 +54,6 @@ test('Without message', () =>
 		name: 'CustomError',
 		message: '',
 	}))
+
+test('native log behaviour', () =>
+	expect(`${new CustomError('Hello')}`).toMatch('CustomError: Hello'))

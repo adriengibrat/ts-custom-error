@@ -85,3 +85,8 @@ test('Factory properties', () => {
 		message: 'foo',
 	})
 })
+
+test('native log behaviour', () =>
+	expect(`${customErrorFactory(function TestError(this: Props, message) {
+		this.message = message
+	})('Hello')}`).toMatch('TestError: Hello'))
