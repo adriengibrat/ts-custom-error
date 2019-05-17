@@ -24,6 +24,8 @@ export type GenericErrorConstructor =
 	| URIErrorConstructor
 	| CustomErrorConstructor<CustomErrorProperties>
 
+type CustomErrorFunction<Properties> = (this: Properties, ...args: any[]) => void
+
 /**
  * Allows to easily extend native errors to create custom applicative errors.
  *
@@ -38,10 +40,10 @@ export type GenericErrorConstructor =
  * ```
  */
 export function customErrorFactory<Properties>(
-	fn: (this: Properties, ...args: any[]) => void,
+	fn: CustomErrorFunction<Properties>,
 	parent: GenericErrorConstructor = Error,
-): CustomErrorConstructor<Properties> {
-	function CustomError(this: CustomErrorInterface, ...args: any[]): void {
+) {
+	function CustomError(this: CustomErrorInterface & Properties, ...args: any[]): void {
 		// allow simple function call
 		if (!(this instanceof CustomError)) return new CustomError(...args)
 		// apply super
@@ -64,5 +66,5 @@ export function customErrorFactory<Properties>(
 				},
 			}),
 		},
-	})
+	}) as CustomErrorConstructor<Properties>
 }
