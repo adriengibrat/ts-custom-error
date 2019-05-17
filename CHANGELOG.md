@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/adriengibrat/ts-custom-error/compare/v3.0.0...v3.1.0) (2019-05-17)
+
+
+### Features
+
+* **log:** Behave like native Error when using console.log ([f884c51](https://github.com/adriengibrat/ts-custom-error/commit/f884c51)), closes [#30](https://github.com/adriengibrat/ts-custom-error/issues/30)
+
 # [3.0.0](https://github.com/adriengibrat/ts-custom-error/compare/v2.2.2...v3.0.0) (2019-03-15)
 
 
