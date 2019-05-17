@@ -148,7 +148,7 @@ npm run commit
 
 ## Licence
 
-Starting [version 3.0.0](https://github.com/adriengibrat/ts-custom-error/releases/tag/v3.0.0) this project is under [MIT licence](LICENCE), there are no code change between [version 2.2.2](https://github.com/adriengibrat/ts-custom-error/releases/tag/v2.2.2) and [version 3.0.0](https://github.com/adriengibrat/ts-custom-error/releases/tag/v3.0.0) but changing licence was considered as a breaking change. All [versions <= 3.0.0](https://github.com/adriengibrat/ts-custom-error/releases) are under [WTFPL](http://www.wtfpl.net).
+Starting [version 3.0.0](https://github.com/adriengibrat/ts-custom-error/releases/tag/v3.0.0) this project is under [MIT licence](LICENCE), there are no code change between [version 2.2.2](https://github.com/adriengibrat/ts-custom-error/releases/tag/v2.2.2) and [version 3.0.0](https://github.com/adriengibrat/ts-custom-error/releases/tag/v3.0.0) but changing licence was considered as a breaking change. All [versions < 3.0.0](https://github.com/adriengibrat/ts-custom-error/releases) are under [WTFPL](http://www.wtfpl.net).
 
 ## Similar packages
 
