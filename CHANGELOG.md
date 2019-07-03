@@ -1,3 +1,10 @@
+## [3.1.1](https://github.com/adriengibrat/ts-custom-error/compare/v3.1.0...v3.1.1) (2019-07-03)
+
+
+### Bug Fixes
+
+* **package:** Remove codeclimate-reporter binary from npm package ([52a6db9](https://github.com/adriengibrat/ts-custom-error/commit/52a6db9)), closes [#32](https://github.com/adriengibrat/ts-custom-error/issues/32)
+
 # [3.1.0](https://github.com/adriengibrat/ts-custom-error/compare/v3.0.0...v3.1.0) (2019-05-17)
 
 
