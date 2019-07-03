@@ -143,9 +143,9 @@ npm run commit
 ⚠️ This project is mainly a pet project and its first purpose is to be a playground for various external services and tools:
 - opinionated code style mostly inspired from [standardjs](https://standardjs.com)
 - automatic code formating with [prettier](https://github.com/prettier/prettier)
-- code quality analysis by [codeclimate](https://codeclimate.com/github/adriengibrat/ts-custom-error) & [bithound](https://www.bithound.io/github/adriengibrat/ts-custom-error)
+- code quality analysis by [codeclimate](https://codeclimate.com/github/adriengibrat/ts-custom-error)~~, [bithound](https://www.bithound.io/github/adriengibrat/ts-custom-error)~~ & [bettercodehub](https://bettercodehub.com/results/adriengibrat/ts-custom-error)
 - automated continuous integration on [travis](https://travis-ci.org/adriengibrat/ts-custom-error)
-- automated semantic versioning with [changelog](CHANGELOG.md) generation and release depoyment on [npm](https://www.npmjs.com/package/ts-custom-error) and [github](https://github.com/adriengibrat/ts-custom-error/releases) thanks to [semantic-release](https://github.com/semantic-release/semantic-release)
+- automated semantic versioning with [changelog](CHANGELOG.md) generation and release deployment on [npm](https://www.npmjs.com/package/ts-custom-error) and [github](https://github.com/adriengibrat/ts-custom-error/releases) thanks to [semantic-release](https://github.com/semantic-release/semantic-release)
 
 ## Licence
 
