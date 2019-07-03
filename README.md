@@ -9,6 +9,7 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/eb4eb956bc028c49f7aa/test_coverage)](https://codeclimate.com/github/adriengibrat/ts-custom-error/test_coverage)
 [![Greenkeeper enabled](https://badges.greenkeeper.io/adriengibrat/ts-custom-error.svg)](https://greenkeeper.io)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Install size](https://packagephobia.now.sh/badge?p=ts-custom-error)](https://packagephobia.now.sh/result?p=ts-custom-error)
 
 ## Extend native Error to create custom errors
 
