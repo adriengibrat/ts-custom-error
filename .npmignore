@@ -1,3 +1,4 @@
+codeclimate-reporter
 coverage/
 dist/example/
 dist/{utils,*.spec,spec.*}.d.ts
