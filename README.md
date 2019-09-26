@@ -102,7 +102,7 @@ class MyError extends CustomError {
 	constructor() {
 		super()
 		// Set name explicitly as minification can mangle class names
-		this.name = 'MyError'
+		Object.defineProperty(this, 'name', { value: 'MyError' })
 	}
 }
 ```
@@ -112,7 +112,7 @@ import { customErrorFactory } from 'ts-custom-error'
 
 const MyError = customErrorFactory(function MyError () {
 	// Set name explicitly as minification can remove function expression names
-	this.name = 'MyError'
+	Object.defineProperty(this, 'name', { value: 'MyError' })
 })
 ```
 
