@@ -1,4 +1,4 @@
-.rpt2_*
+.rts2_*
 .vscode/
 codeclimate-reporter
 coverage/

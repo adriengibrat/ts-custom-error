@@ -1,14 +1,22 @@
 {
   "compilerOptions": {
-    "lib": ["es6"],
-    "target": "es5",
+    "lib": ["ES6"],
+    "target": "ES5",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
     "sourceMap": true,
-    "outDir": "dist",
+    "declaration": true,
+    "outDir": "dist/src",
     "removeComments": true
   },
+  "exclude": [
+    "node_modules/**",
+    "src/example/*",
+    "src/*.spec.*",
+    "src/spec.*"
+  ],
   "include": [
-    "src/**/*",
-    "dist/custom-error.umd.min.d.ts",
-    "dist/custom-error.umd.d.ts"
+    "src/**/*"
   ]
 }

@@ -22,6 +22,6 @@ export const checkProperties = (error: any, properties: CheckedProperties) => {
 	)
 	const stackPattern = properties.message
 		? `${properties.name}: ${properties.message}`
-		: new RegExp(`^${properties.name}\\s`)
+		: new RegExp(`^${properties.name}\\b`)
 	expect(error.stack).toMatch(stackPattern)
 }

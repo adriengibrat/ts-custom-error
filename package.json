@@ -13,18 +13,19 @@
   "license": "MIT",
   "main": "dist/custom-error.js",
   "module": "dist/custom-error.mjs",
-  "browser": "dist/custom-error.umd.js",
-  "browser:min": "dist/custom-error.umd.min.js",
+  "unpkg": "dist/custom-error.umd.js",
   "types": "dist/custom-error.d.ts",
-  "source": "src/index.ts",
   "engines": {
     "node": ">=8.0.0"
   },
   "scripts": {
     "start": "jest --watch --notify",
     "prebuild": "rm --recursive --force dist",
-    "build": "microbundle --compress false",
-    "postbuild": "uglifyjs --compress --output $npm_package_browser_min -- $npm_package_browser && cat dist/factory.d.ts >> dist/custom-error.d.ts && rm --recursive --force dist/example dist/factory.d.ts dist/utils.d.ts dist/index.d.ts dist/**spec.* && cat dist/custom-error.d.ts > dist/custom-error.umd.d.ts && cat dist/custom-error.d.ts > dist/custom-error.umd.min.d.ts",
+    "build": "tsc --build tsconfig.json && microbundle build --no-compress --entry dist/src/index.js",
+    "postbuild": "npm run minify:umd && npm run types:concat && npm run dist:cleanup",
+    "minify:umd": "uglifyjs --compress --output $npm_package_unpkg -- $npm_package_unpkg",
+    "types:concat": "cat dist/src/factory.d.ts >> dist/src/custom-error.d.ts && cat dist/src/custom-error.d.ts > dist/custom-error.d.ts && cat dist/custom-error.d.ts > dist/custom-error.umd.d.ts",
+    "dist:cleanup": "rm --recursive --force dist/src",
     "test": "jest",
     "coverage": "jest --coverage",
     "commit": "lint-staged && git-cz",
@@ -33,23 +34,25 @@
   "devDependencies": {
     "@semantic-release/changelog": "^5.0.0",
     "@semantic-release/git": "^9.0.0",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^13.1.0",
-    "commitizen": "^4.0.0",
-    "cz-conventional-changelog": "^3.0.0",
-    "jest": "^23.6.0",
+    "@types/jest": "^25.1.0",
+    "@types/node": "^13.7.1",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.1.0",
+    "jest": "^25.1.0",
     "jest-tap-reporter": "^1.9.0",
-    "lint-staged": "^10.0.3",
-    "microbundle": "^0.6.0",
-    "prettier": "^1.15.3",
+    "lint-staged": "^10.0.7",
+    "microbundle": "^0.11.0",
+    "prettier": "^1.19.1",
     "semantic-release": "^17.0.3",
-    "tap-notify": "^1.0.0",
     "travis-deploy-once": "^5.0.11",
-    "ts-jest": "^25.1.0",
-    "tslint": "^5.12.0",
-    "tslint-config-prettier": "^1.17.0",
+    "ts-jest": "^25.2.0",
+    "tslint": "^6.0.0",
+    "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^9.0.0",
-    "typescript": "^3.2.2"
+    "typescript": "^3.7.5"
+  },
+  "mangle": {
+    "regex": "^(?!CustomError\b).*"
   },
   "config": {
     "commitizen": {
@@ -100,10 +103,13 @@
       {
         "path": "@semantic-release/github",
         "assets": [
-          {
-            "path": "dist/custom-error.umd.min.js",
-            "label": "Minified UMD"
-          }
+          { "path": "dist/custom-error.d.ts", "label": "Typescript typings" },
+          { "path": "dist/custom-error.js", "label": "Common JS" },
+          { "path": "dist/custom-error.js.map", "label": "Common JS - sourcemap" },
+          { "path": "dist/custom-error.mjs", "label": "ES module" },
+          { "path": "dist/custom-error.mjs.map", "label": "ES module - sourcemap" },
+          { "path": "dist/custom-error.umd.js", "label": "UMD (minified, CDN ready)" },
+          { "path": "dist/custom-error.umd.js.map", "label": "UMD - sourcemap" }
         ]
       }
     ]
