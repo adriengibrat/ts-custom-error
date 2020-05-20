@@ -32,24 +32,24 @@
     "deploy": "travis-deploy-once semantic-release"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^5.0.0",
+    "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
-    "@types/jest": "^25.1.0",
-    "@types/node": "^14.0.0",
-    "commitizen": "^4.0.3",
-    "cz-conventional-changelog": "^3.1.0",
-    "jest": "^25.1.0",
+    "@types/jest": "^25.2.3",
+    "@types/node": "^14.0.4",
+    "commitizen": "^4.1.2",
+    "cz-conventional-changelog": "^3.2.0",
+    "jest": "^26.0.1",
     "jest-tap-reporter": "^1.9.0",
-    "lint-staged": "^10.0.7",
+    "lint-staged": "^10.2.4",
     "microbundle": "^0.11.0",
-    "prettier": "^2.0.0",
-    "semantic-release": "^17.0.3",
+    "prettier": "^2.0.5",
+    "semantic-release": "^17.0.7",
     "travis-deploy-once": "^5.0.11",
     "ts-jest": "^26.0.0",
-    "tslint": "^6.0.0",
+    "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^9.0.0",
-    "typescript": "^3.7.5"
+    "typescript": "^3.9.3"
   },
   "mangle": {
     "regex": "^(?!CustomError\b).*"
@@ -103,13 +103,34 @@
       {
         "path": "@semantic-release/github",
         "assets": [
-          { "path": "dist/custom-error.d.ts", "label": "Typescript typings" },
-          { "path": "dist/custom-error.js", "label": "Common JS" },
-          { "path": "dist/custom-error.js.map", "label": "Common JS - sourcemap" },
-          { "path": "dist/custom-error.mjs", "label": "ES module" },
-          { "path": "dist/custom-error.mjs.map", "label": "ES module - sourcemap" },
-          { "path": "dist/custom-error.umd.js", "label": "UMD (minified, CDN ready)" },
-          { "path": "dist/custom-error.umd.js.map", "label": "UMD - sourcemap" }
+          {
+            "path": "dist/custom-error.d.ts",
+            "label": "Typescript typings"
+          },
+          {
+            "path": "dist/custom-error.js",
+            "label": "Common JS"
+          },
+          {
+            "path": "dist/custom-error.js.map",
+            "label": "Common JS - sourcemap"
+          },
+          {
+            "path": "dist/custom-error.mjs",
+            "label": "ES module"
+          },
+          {
+            "path": "dist/custom-error.mjs.map",
+            "label": "ES module - sourcemap"
+          },
+          {
+            "path": "dist/custom-error.umd.js",
+            "label": "UMD (minified, CDN ready)"
+          },
+          {
+            "path": "dist/custom-error.umd.js.map",
+            "label": "UMD - sourcemap"
+          }
         ]
       }
     ]
