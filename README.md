@@ -7,7 +7,6 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/adriengibrat/ts-custom-error?branch=master)](https://bettercodehub.com/results/adriengibrat/ts-custom-error)
 [![Maintainability](https://api.codeclimate.com/v1/badges/eb4eb956bc028c49f7aa/maintainability)](https://codeclimate.com/github/adriengibrat/ts-custom-error/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/eb4eb956bc028c49f7aa/test_coverage)](https://codeclimate.com/github/adriengibrat/ts-custom-error/test_coverage)
-[![Greenkeeper enabled](https://badges.greenkeeper.io/adriengibrat/ts-custom-error.svg)](https://greenkeeper.io)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![Install size](https://badgen.net/packagephobia/install/ts-custom-error)](https://packagephobia.now.sh/result?p=ts-custom-error)
 [![Bundle size](https://badgen.net/bundlephobia/minzip/ts-custom-error?color=green)](https://bundlephobia.com/result?p=ts-custom-error)
