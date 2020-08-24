@@ -35,9 +35,19 @@ test('Factory extended by class', () => {
 	checkProtoChain(SubError, TestError, RangeError, Error)
 })
 
+test('Factory extended with name', () => {
+	const RenamedError = customErrorFactory(function RenamedError(this: RangeError, message: string) {
+		this.message = message
+		Object.defineProperty(this, 'name', { value: 'test' });
+	}, RangeError) as ErrorConstructor
+	checkProtoChain(RenamedError, RangeError, Error)
+	checkProperties(new RenamedError('test message'), {
+		name: 'test',
+		message: 'test message',
+	})
+})
+
 test('Factory properties', () => {
-
-
 	function TestError(this: Props, code = 1, message = 'foo') {
 		this.code = code
 		this.message = message
@@ -86,7 +96,7 @@ test('Factory properties', () => {
 	})
 })
 
-test('native log behaviour', () =>
+test('Native log behaviour', () =>
 	expect(`${customErrorFactory(function TestError(this: Props, message) {
 		this.message = message
 	})('Hello')}`).toMatch('TestError: Hello'))
