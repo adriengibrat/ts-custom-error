@@ -43,6 +43,20 @@ test('Extended with constructor', () => {
 	})
 })
 
+test('Extended with name', () => {
+	class RenamedError extends CustomError {
+		constructor(name: string, message?: string) {
+			super(message)
+			Object.defineProperty(this, 'name', { value: name });
+		}
+	}
+	checkProtoChain(RenamedError, CustomError, Error)
+	checkProperties(new RenamedError('test', 'test message'), {
+		name: 'test',
+		message: 'test message',
+	})
+})
+
 test('Basic properties', () =>
 	checkProperties(new CustomError('my message'), {
 		name: 'CustomError',
@@ -55,5 +69,5 @@ test('Without message', () =>
 		message: '',
 	}))
 
-test('native log behaviour', () =>
+test('Native log behaviour', () =>
 	expect(`${new CustomError('Hello')}`).toMatch('CustomError: Hello'))

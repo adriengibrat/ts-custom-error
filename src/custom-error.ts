@@ -28,6 +28,7 @@ export class CustomError extends Error {
 		Object.defineProperty(this, 'name', {
 			value: new.target.name,
 			enumerable: false,
+			configurable: true,
 		})
 		// fix the extended error prototype chain
 		// because typescript __extends implementation can't
