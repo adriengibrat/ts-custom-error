@@ -1,3 +1,10 @@
+# [3.2.0](https://github.com/adriengibrat/ts-custom-error/compare/v3.1.1...v3.2.0) (2020-08-24)
+
+
+### Features
+
+* **name:** Allow to redefine error name property ([94efde0](https://github.com/adriengibrat/ts-custom-error/commit/94efde0a70b62eea191bc9ff204b43101f367da8))
+
 ## [3.1.1](https://github.com/adriengibrat/ts-custom-error/compare/v3.1.0...v3.1.1) (2019-07-03)
 
 
