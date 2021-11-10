@@ -49,7 +49,7 @@ class HttpError extends CustomError {
 
 new HttpError(404, 'Not found')
 ```
-You may want more advanced contructor logic and cutom methods, see [examples](https://github.com/adriengibrat/ts-custom-error/tree/master/src/example)
+You may want more advanced contructor logic and custom methods, see [examples](https://github.com/adriengibrat/ts-custom-error/tree/master/src/example)
 
 ### Use `customErrorFactory` factory
 
