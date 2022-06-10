@@ -43,7 +43,7 @@
     "lint-staged": "^10.2.4",
     "microbundle": "^0.11.0",
     "prettier": "^2.0.5",
-    "semantic-release": "^17.0.7",
+    "semantic-release": "^19.0.3",
     "travis-deploy-once": "^5.0.11",
     "ts-jest": "^26.0.0",
     "tslint": "^6.1.2",
