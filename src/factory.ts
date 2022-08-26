@@ -39,7 +39,7 @@ type CustomErrorFunction<Properties> = (this: Properties, ...args: any[]) => voi
  * new HttpError(404, 'Not found')
  * ```
  */
-export function customErrorFactory<Properties>(
+export function customErrorFactory<Properties extends CustomErrorProperties>(
 	fn: CustomErrorFunction<Properties>,
 	parent: GenericErrorConstructor = Error,
 ) {
