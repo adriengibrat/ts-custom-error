@@ -1,3 +1,12 @@
+## [3.2.2](https://github.com/adriengibrat/ts-custom-error/compare/v3.2.1...v3.2.2) (2022-08-27)
+
+
+### Bug Fixes
+
+* build badge & publish semantic release branch ([b44245c](https://github.com/adriengibrat/ts-custom-error/commit/b44245ccd5fb90eb44a3d99d47080da600d67714))
+* publish new release ([436918e](https://github.com/adriengibrat/ts-custom-error/commit/436918e1d6d333c15da48ffd45aa22b37e213464))
+* renamed branch to main & updated all dev deps / CI ([7733299](https://github.com/adriengibrat/ts-custom-error/commit/773329995ac394f42199c3fcef6f5a44ad886881))
+
 ## [3.2.1](https://github.com/adriengibrat/ts-custom-error/compare/v3.2.0...v3.2.1) (2022-08-27)
 
 
