@@ -4,7 +4,7 @@
 [![Pet project](https://img.shields.io/badge/maintain-pet_project-yellow.svg?logo=github)](#automate-all-the-things)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://github.com/github/docs/actions/workflows/build.yml/badge.svg)](https://github.com/adriengibrat/ts-custom-error/actions/workflows/build.yml)
-[![BCH compliance](https://bettercodehub.com/edge/badge/adriengibrat/ts-custom-error?branch=master)](https://bettercodehub.com/results/adriengibrat/ts-custom-error)
+[![BCH compliance](https://bettercodehub.com/edge/badge/adriengibrat/ts-custom-error?branch=main)](https://bettercodehub.com/results/adriengibrat/ts-custom-error)
 [![CodeQL](https://github.com/github/docs/actions/workflows/codeql.yml/badge.svg)](https://github.com/adriengibrat/ts-custom-error/actions/workflows/codeql.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/eb4eb956bc028c49f7aa/maintainability)](https://codeclimate.com/github/adriengibrat/ts-custom-error/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/eb4eb956bc028c49f7aa/test_coverage)](https://codeclimate.com/github/adriengibrat/ts-custom-error/test_coverage)
@@ -50,7 +50,7 @@ class HttpError extends CustomError {
 
 new HttpError(404, 'Not found')
 ```
-You may want more advanced contructor logic and custom methods, see [examples](https://github.com/adriengibrat/ts-custom-error/tree/master/src/example)
+You may want more advanced contructor logic and custom methods, see [examples](https://github.com/adriengibrat/ts-custom-error/tree/main/src/example)
 
 ### Use `customErrorFactory` factory
 
