@@ -3,7 +3,7 @@
 [![NPM version](https://img.shields.io/npm/v/ts-custom-error.svg?colorB=green)](https://www.npmjs.com/package/ts-custom-error)
 [![Pet project](https://img.shields.io/badge/maintain-pet_project-yellow.svg?logo=github)](#automate-all-the-things)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Build Status](https://github.com/github/docs/actions/workflows/build.yml/badge.svg)](https://github.com/adriengibrat/ts-custom-error/actions/workflows/build.yml)
+[![Build Status](https://github.com/adriengibrat/ts-custom-error/actions/workflows/build.yml/badge.svg)](https://github.com/adriengibrat/ts-custom-error/actions/workflows/build.yml)
 [![BCH compliance](https://bettercodehub.com/edge/badge/adriengibrat/ts-custom-error?branch=main)](https://bettercodehub.com/results/adriengibrat/ts-custom-error)
 [![CodeQL](https://github.com/github/docs/actions/workflows/codeql.yml/badge.svg)](https://github.com/adriengibrat/ts-custom-error/actions/workflows/codeql.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/eb4eb956bc028c49f7aa/maintainability)](https://codeclimate.com/github/adriengibrat/ts-custom-error/maintainability)
