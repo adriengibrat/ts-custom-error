@@ -1,16 +1,24 @@
 name: Test
 
-coverage:
-  steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 16
-        cache: npm
-        cache-dependency-path: package-lock.json
-    - run: npm ci
-    - uses: paambaati/codeclimate-action@v2.2.4
-      env:
-        CC_TEST_REPORTER_ID: ee13d547546040d53e02f832f14cbff957c249b41ce19f1b9eca55f58d1b5e02
-      with:
-        coverageCommand: npm run coverage
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci
+      - name: Publish code coverage
+        uses: paambaati/codeclimate-action@v3.0.0
+        env:
+          CC_TEST_REPORTER_ID: ee13d547546040d53e02f832f14cbff957c249b41ce19f1b9eca55f58d1b5e02
+        with:
+          coverageCommand: npm run coverage
