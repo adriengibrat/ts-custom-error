@@ -1,3 +1,10 @@
+## [3.2.1](https://github.com/adriengibrat/ts-custom-error/compare/v3.2.0...v3.2.1) (2022-08-27)
+
+
+### Bug Fixes
+
+* update types to support TS 4.8.2 ([80f5eb0](https://github.com/adriengibrat/ts-custom-error/commit/80f5eb08a1786ac397d6b7dd27e586e386dbe1ef))
+
 # [3.2.0](https://github.com/adriengibrat/ts-custom-error/compare/v3.1.1...v3.2.0) (2020-08-24)
 
 
