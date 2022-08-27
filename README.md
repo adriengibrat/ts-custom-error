@@ -3,8 +3,9 @@
 [![NPM version](https://img.shields.io/npm/v/ts-custom-error.svg?colorB=green)](https://www.npmjs.com/package/ts-custom-error)
 [![Pet project](https://img.shields.io/badge/maintain-pet_project-yellow.svg?logo=github)](#automate-all-the-things)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Build Status](https://img.shields.io/travis/adriengibrat/ts-custom-error.svg)](https://travis-ci.org/adriengibrat/ts-custom-error)
+[![Build Status](https://github.com/github/docs/actions/workflows/build.yml/badge.svg)](https://github.com/adriengibrat/ts-custom-error/actions/workflows/build.yml)
 [![BCH compliance](https://bettercodehub.com/edge/badge/adriengibrat/ts-custom-error?branch=master)](https://bettercodehub.com/results/adriengibrat/ts-custom-error)
+[![CodeQL](https://github.com/github/docs/actions/workflows/codeql.yml/badge.svg)](https://github.com/adriengibrat/ts-custom-error/actions/workflows/codeql.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/eb4eb956bc028c49f7aa/maintainability)](https://codeclimate.com/github/adriengibrat/ts-custom-error/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/eb4eb956bc028c49f7aa/test_coverage)](https://codeclimate.com/github/adriengibrat/ts-custom-error/test_coverage)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
@@ -143,8 +144,8 @@ npm run commit
 ⚠️ This project is mainly a pet project and its first purpose is to be a playground for various external services and tools:
 - opinionated code style mostly inspired from [standardjs](https://standardjs.com)
 - automatic code formating with [prettier](https://github.com/prettier/prettier)
-- code quality analysis by [codeclimate](https://codeclimate.com/github/adriengibrat/ts-custom-error)~~, [bithound](https://www.bithound.io/github/adriengibrat/ts-custom-error)~~ & [bettercodehub](https://bettercodehub.com/results/adriengibrat/ts-custom-error)
-- automated continuous integration on [travis](https://travis-ci.org/adriengibrat/ts-custom-error)
+- code quality analysis by [codeclimate](https://codeclimate.com/github/adriengibrat/ts-custom-error)~~, [bithound](https://www.bithound.io/github/adriengibrat/ts-custom-error)~~, [bettercodehub](https://bettercodehub.com/results/adriengibrat/ts-custom-error) & [CodeQL](https://github.com/adriengibrat/ts-custom-error/security/code-scanning)
+- automated continuous integration on ~~[travis](https://travis-ci.org/adriengibrat/ts-custom-error)~~ [github actions](https://github.com/adriengibrat/ts-custom-error/actions) & [Dependabot](https://github.com/adriengibrat/ts-custom-error/security/dependabot)
 - automated semantic versioning with [changelog](CHANGELOG.md) generation and release deployment on [npm](https://www.npmjs.com/package/ts-custom-error) and [github](https://github.com/adriengibrat/ts-custom-error/releases) thanks to [semantic-release](https://github.com/semantic-release/semantic-release)
 
 ## Licence
