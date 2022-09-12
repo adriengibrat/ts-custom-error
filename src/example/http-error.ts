@@ -41,13 +41,13 @@ export class HttpError extends CustomError {
 		506: 'Variant Also Negotiates', // RFC 2295
 		510: 'Not Extended', // RFC 2774
 		511: 'Network Authentication Required', // RFC 6585
-	}
+	} as const
 
 	public constructor(public code: number, message: string) {
 		super(message)
 	}
 
-	public static fromCode(code: number) {
+	public static fromCode(code: keyof typeof HttpError.messages) {
 		return new HttpError(code, HttpError.messages[code])
 	}
 }
