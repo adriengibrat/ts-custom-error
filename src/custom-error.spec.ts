@@ -21,7 +21,7 @@ test('Instance pre ES6 environment', () => {
 })
 
 test('Extended', () => {
-	class SubError extends CustomError {}
+	class SubError extends CustomError { }
 	checkProtoChain(SubError, CustomError, Error)
 	checkProperties(new SubError('test message'), {
 		name: 'SubError',
@@ -71,3 +71,12 @@ test('Without message', () =>
 
 test('Native log behaviour', () =>
 	expect(`${new CustomError('Hello')}`).toMatch('CustomError: Hello'))
+
+test('Error cause', () => {
+	const cause = new Error()
+	checkProperties(new CustomError('test message', { cause }), {
+		name: 'CustomError',
+		message: 'test message',
+		cause,
+	})
+})

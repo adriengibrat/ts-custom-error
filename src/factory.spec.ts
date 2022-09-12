@@ -8,7 +8,7 @@ const TestError = customErrorFactory(function TestError() {
 type Props = { code: number; message: string }
 
 const createTestErrorInstance = (parent?: GenericErrorConstructor) =>
-	customErrorFactory<Props>(function(
+	customErrorFactory<Props>(function (
 		this: Props,
 		code = 2,
 		message = 'bar',
@@ -31,7 +31,7 @@ test('Factory extended by class', () => {
 	const TestError = customErrorFactory(function TestError() {
 		/* noop */
 	}, RangeError) as ErrorConstructor
-	class SubError extends TestError {}
+	class SubError extends TestError { }
 	checkProtoChain(SubError, TestError, RangeError, Error)
 })
 
@@ -39,7 +39,7 @@ test('Factory extended with name', () => {
 	const RenamedError = customErrorFactory(function RenamedError(this: RangeError, message: string) {
 		this.message = message
 		Object.defineProperty(this, 'name', { value: 'test' });
-	}, RangeError) as ErrorConstructor
+	}, RangeError)
 	checkProtoChain(RenamedError, RangeError, Error)
 	checkProperties(new RenamedError('test message'), {
 		name: 'test',
@@ -100,3 +100,19 @@ test('Native log behaviour', () =>
 	expect(`${customErrorFactory(function TestError(this: Props, message) {
 		this.message = message
 	})('Hello')}`).toMatch('TestError: Hello'))
+
+
+type ErrorWithCause = { message?: string, cause?: unknown; }
+
+test('Error cause', () => {
+	const cause = new Error()
+	const TestError = customErrorFactory(function TestError(this: ErrorWithCause, message?: string, options?: { cause: unknown }) {
+		this.message = message
+		this.cause = options?.cause
+	})
+	checkProperties(new TestError('test message', { cause }), {
+		name: 'TestError',
+		message: 'test message',
+		cause,
+	})
+})

@@ -1,22 +1,25 @@
 {
-  "compilerOptions": {
-    "lib": ["ES6"],
-    "target": "ES5",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "esModuleInterop": true,
-    "sourceMap": true,
-    "declaration": true,
-    "outDir": "dist/src",
-    "removeComments": true
-  },
-  "exclude": [
-    "node_modules/**",
-    "src/example/*",
-    "src/*.spec.*",
-    "src/spec.*"
-  ],
-  "include": [
-    "src/**/*"
-  ]
+	"compilerOptions": {
+		"lib": [
+			"ES6",
+			"ES2022.error"
+		],
+		"target": "ES5",
+		"module": "ESNext",
+		"moduleResolution": "Node",
+		"esModuleInterop": true,
+		"sourceMap": true,
+		"declaration": true,
+		"outDir": "dist/src",
+		"removeComments": true
+	},
+	"exclude": [
+		"node_modules/**",
+		"src/example/*",
+		"src/*.spec.*",
+		"src/spec.*"
+	],
+	"include": [
+		"src/**/*"
+	]
 }
