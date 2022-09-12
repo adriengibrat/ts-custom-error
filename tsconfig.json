@@ -2,6 +2,7 @@
 	"compilerOptions": {
 		"lib": [
 			"ES6",
+			"ES2022",
 			"ES2022.error"
 		],
 		"target": "ES5",
