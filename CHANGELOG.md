@@ -1,3 +1,15 @@
+# [3.3.0](https://github.com/adriengibrat/ts-custom-error/compare/v3.2.2...v3.3.0) (2022-10-22)
+
+
+### Bug Fixes
+
+* add es2022 typescript lib ([e04a6b1](https://github.com/adriengibrat/ts-custom-error/commit/e04a6b1ef9870b731144670fbde5a83a5b3959c6))
+
+
+### Features
+
+* **cause:** add suport for error cause ([683cf2b](https://github.com/adriengibrat/ts-custom-error/commit/683cf2bbc84f773a50dbacfe12477db13cdb6b2b))
+
 ## [3.2.2](https://github.com/adriengibrat/ts-custom-error/compare/v3.2.1...v3.2.2) (2022-08-27)
 
 
