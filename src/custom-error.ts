@@ -1,7 +1,7 @@
 import { fixProto, fixStack } from './utils'
 
 // copy from https://github.com/microsoft/TypeScript/blob/main/lib/lib.es2022.error.d.ts
-// avoid https://github.com/adriengibrat/ts-custom-error/issues/81 isue
+// avoid typescript isue https://github.com/adriengibrat/ts-custom-error/issues/81
 interface ErrorOptions {
     cause?: unknown
 }
