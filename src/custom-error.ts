@@ -1,5 +1,11 @@
 import { fixProto, fixStack } from './utils'
 
+// copy from https://github.com/microsoft/TypeScript/blob/main/lib/lib.es2022.error.d.ts
+// avoid https://github.com/adriengibrat/ts-custom-error/issues/81 isue
+interface ErrorOptions {
+    cause?: unknown
+}
+
 /**
  * Allows to easily extend a base class to create custom applicative errors.
  *
