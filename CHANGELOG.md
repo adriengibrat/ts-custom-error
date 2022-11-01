@@ -1,3 +1,10 @@
+## [3.3.1](https://github.com/adriengibrat/ts-custom-error/compare/v3.3.0...v3.3.1) (2022-11-01)
+
+
+### Bug Fixes
+
+* avoid error Cannot find name 'ErrorOptions' ([7535f79](https://github.com/adriengibrat/ts-custom-error/commit/7535f79f3ad8e0554a1f6062bb62e11e245ea792))
+
 # [3.3.0](https://github.com/adriengibrat/ts-custom-error/compare/v3.2.2...v3.3.0) (2022-10-22)
 
 
