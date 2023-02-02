@@ -1,7 +1,7 @@
 # Typescript Custom Error
 
 [![NPM version](https://img.shields.io/npm/v/ts-custom-error.svg?colorB=green)](https://www.npmjs.com/package/ts-custom-error)
-[![Pet project](https://img.shields.io/badge/maintain-pet_project-yellow.svg?logo=github)](#automate-all-the-things)
+[![stable](https://img.shields.io/badge/maintain-stable-green.svg?logo=github)](#automate-all-the-things)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://github.com/adriengibrat/ts-custom-error/actions/workflows/build.yml/badge.svg)](https://github.com/adriengibrat/ts-custom-error/actions/workflows/build.yml)
 [![CodeQL](https://github.com/github/docs/actions/workflows/codeql.yml/badge.svg)](https://github.com/adriengibrat/ts-custom-error/actions/workflows/codeql.yml)
