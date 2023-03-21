@@ -47,7 +47,7 @@
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^9.0.0",
-    "typescript": "^4.8.2",
+    "typescript": "^5.0.2",
     "uglifyjs": "^2.4.11"
   },
   "mangle": {
