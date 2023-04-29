@@ -140,7 +140,7 @@ npm run commit
 
 ### Automate all the things
 
-⚠️ This project is mainly a pet project and its first purpose is to be a playground for various external services and tools:
+This project is maintained, it was a pet project and its first purpose was to be a playground for various external services and tools:
 - opinionated code style mostly inspired from [standardjs](https://standardjs.com)
 - automatic code formating with [prettier](https://github.com/prettier/prettier)
 - code quality analysis by [codeclimate](https://codeclimate.com/github/adriengibrat/ts-custom-error) & [CodeQL](https://github.com/adriengibrat/ts-custom-error/security/code-scanning)
