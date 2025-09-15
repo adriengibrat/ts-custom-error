@@ -43,7 +43,7 @@
     "microbundle": "^0.15.1",
     "prettier": "^3.0.0",
     "semantic-release": "^24.0.0",
-    "ts-jest": "^28.0.8",
+    "ts-jest": "^29.4.2",
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^9.0.0",
