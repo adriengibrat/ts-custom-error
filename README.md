@@ -144,8 +144,8 @@ npm run commit
 This project is maintained, it was a pet project and its first purpose was to be a playground for various external services and tools:
 - opinionated code style mostly inspired from [standardjs](https://standardjs.com)
 - automatic code formating with [prettier](https://github.com/prettier/prettier)
-- code quality analysis by [codeclimate](https://codeclimate.com/github/adriengibrat/ts-custom-error) & [CodeQL](https://github.com/adriengibrat/ts-custom-error/security/code-scanning)
-- automated continuous integration on ~~[travis](https://travis-ci.org/adriengibrat/ts-custom-error)~~ [github actions](https://github.com/adriengibrat/ts-custom-error/actions) & [Dependabot](https://github.com/adriengibrat/ts-custom-error/security/dependabot)
+- code quality analysis by ~~[codeclimate](https://codeclimate.com/github/adriengibrat/ts-custom-error)~~ [Qlty](https://qlty.sh) & [CodeQL](https://github.com/adriengibrat/ts-custom-error/security/code-scanning)
+- automated continuous integration on ~~[travis](https://travis-ci.org/adriengibrat/ts-custom-error)~~ [Github actions](https://github.com/adriengibrat/ts-custom-error/actions) & [Dependabot](https://github.com/adriengibrat/ts-custom-error/security/dependabot)
 - automated semantic versioning with [changelog](CHANGELOG.md) generation and release deployment on [npm](https://www.npmjs.com/package/ts-custom-error) and [github](https://github.com/adriengibrat/ts-custom-error/releases) thanks to [semantic-release](https://github.com/semantic-release/semantic-release)
 
 ## Licence
