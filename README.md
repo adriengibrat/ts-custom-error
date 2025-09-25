@@ -5,6 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://github.com/adriengibrat/ts-custom-error/actions/workflows/build.yml/badge.svg)](https://github.com/adriengibrat/ts-custom-error/actions/workflows/build.yml)
 [![CodeQL](https://github.com/github/docs/actions/workflows/codeql.yml/badge.svg)](https://github.com/adriengibrat/ts-custom-error/actions/workflows/codeql.yml)
+
 [![Maintainability](https://qlty.sh/gh/adriengibrat/projects/ts-custom-error/maintainability.svg)](https://qlty.sh/gh/adriengibrat/projects/ts-custom-error)
 [![Code Coverage](https://qlty.sh/gh/adriengibrat/projects/ts-custom-error/coverage.svg)](https://qlty.sh/gh/adriengibrat/projects/ts-custom-error)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
